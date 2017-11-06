@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="42f9e37f-f4d9-4514-afba-1a277499e366"
+  name="EntityFramework"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="fd83f996-9ff1-4429-8bea-1e3653138a97"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMicrosoft.AspNet.Identity.EntityFramework"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="14a658e3-0991-4449-87ef-f1a75d53f8fb"
+        name="IdentityUser&lt;Int32‎, CustomUserLogin‎, CustomUserRole‎, CustomUserClaim‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="950982f7-0033-424c-8cf2-30229176946e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ccf4fb02-1aa9-43fa-9a8c-beaf1e8a0846">
+                <propertyInstance
+                  Id="f7e2d8a1-ae6a-4f16-a76b-d7c3c4cee770"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="040c82cd-2f5d-45a0-a0df-14fa309fd791">
+                <propertyInstance
+                  Id="557eac6e-8c8f-4e86-b5f5-c085abc86e55"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="afb735f8-3fed-4afb-ab67-4fda3e6cb03f">
+                <propertyInstance
+                  Id="15a53440-b216-4483-a90d-6907ea3b9dcf"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="372f6876-ce23-4355-9dfe-cc7b2075778a">
+                <propertyInstance
+                  Id="10476fdd-1eb1-489a-9149-9f9f58e1a028"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="94b27d42-59db-44eb-be46-8019f813b5bb">
+                <propertyInstance
+                  Id="17bb8c3f-dca9-41d1-b02c-883e4ca8d75a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="0a461718-bb38-474d-9335-19168da8bd07">
+            <redefinableTemplateSignatureMoniker
+              Id="9f5ce921-19fa-4ac8-a5b2-bb5132eedd93"
+              LastKnownLocation="Package3_1433.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="84466466-62fa-4d80-8c8c-637ccffe1b77">
+                  <actuals>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="CampsModels.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="ef64b815-023d-4fd5-aff7-c945c5124eda"
+                      LastKnownLocation="Package3_1433.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="ddb613b4-29c4-4106-85bd-d91c3810d1c9">
+                  <actuals>
+                    <classMoniker
+                      Id="35fee8d3-3430-4228-b8bd-1b39968a2b6f"
+                      LastKnownName="CustomUserLogin"
+                      LastKnownLocation="Package_1432.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="43e9a98f-3b08-4e05-859c-daae665653cd"
+                      LastKnownLocation="Package3_1433.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="a974c288-e1a9-4979-b22b-79d1c3fb73f7">
+                  <actuals>
+                    <classMoniker
+                      Id="12db359f-7116-4e6e-b63a-88e621766bbc"
+                      LastKnownName="CustomUserRole"
+                      LastKnownLocation="Package_1432.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="854f8022-43c2-45c0-8783-c81e1aeb6e2e"
+                      LastKnownLocation="Package3_1433.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="ef3a809a-5ee5-426c-a812-3075a49fca96">
+                  <actuals>
+                    <classMoniker
+                      Id="cb0e3e38-4ed3-42f0-942e-5513163244f9"
+                      LastKnownName="CustomUserClaim"
+                      LastKnownLocation="Package_1432.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="54629914-e49f-4b15-b165-d57f7943867f"
+                      LastKnownLocation="Package3_1433.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ecf05278-7092-464d-9618-a5b1391802d4"
+        name="IdentityUser"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0e379c66-1ddd-487d-ad1d-16b3709d3def"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2FProjects%2FCamps%2FCamps%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.1.0%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUser GenericParameterCount%3D4)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9a62f223-e780-49df-abdc-cff390d6226f"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9f7b9cc2-5493-4eb7-9c08-575dc87df584">
+                <propertyInstance
+                  Id="de6ddfb3-e8cc-492c-a226-ff070a513f22"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3e01c2a2-8ad4-49ea-8969-8b631dde8768">
+                <propertyInstance
+                  Id="93c444d3-613d-4b0b-b156-a61458e73ffc"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9f15210a-0d1e-4f42-809d-03eeab7162a5">
+                <propertyInstance
+                  Id="a30c3dd2-4fc6-442e-8627-57529dd19e8a"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c1ddd1c0-9d81-4138-8429-9433da567bed">
+                <propertyInstance
+                  Id="c607c9b5-94be-4fc5-8fc1-4a4934d5fb48"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f1fdd8b6-c8c0-4729-8615-8bc4f8ff7843">
+                <propertyInstance
+                  Id="7a765913-fedf-43e1-9442-e3db69ef692a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="9f5ce921-19fa-4ac8-a5b2-bb5132eedd93"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="ef64b815-023d-4fd5-aff7-c945c5124eda">
+                <referencesInternal>
+                  <reference
+                    Id="45f9af8c-d0e6-4e3f-8437-fbd777548968"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FD:%2FProjects%2FCamps%2FCamps%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.1.0%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUser GenericParameterCount%3D4) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="38147831-7883-4e51-be2d-241c835e55b0"
+                    name="TKey"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+              <classifierTemplateParameter
+                Id="43e9a98f-3b08-4e05-859c-daae665653cd">
+                <referencesInternal>
+                  <reference
+                    Id="50c827e0-bd95-4515-a9d1-77b3f477f68a"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FD:%2FProjects%2FCamps%2FCamps%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.1.0%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUser GenericParameterCount%3D4) ParameterIdentifier%3D1"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="0c00b772-d634-4257-b1a2-5ccab767d7aa"
+                    name="TLogin"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+              <classifierTemplateParameter
+                Id="854f8022-43c2-45c0-8783-c81e1aeb6e2e">
+                <referencesInternal>
+                  <reference
+                    Id="30c28b38-0854-41db-9254-9400b273cb6b"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FD:%2FProjects%2FCamps%2FCamps%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.1.0%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUser GenericParameterCount%3D4) ParameterIdentifier%3D2"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="2f32a2f9-1c30-47ff-81d4-5b8e2ef9856e"
+                    name="TRole"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+              <classifierTemplateParameter
+                Id="54629914-e49f-4b15-b165-d57f7943867f">
+                <referencesInternal>
+                  <reference
+                    Id="0c4426a9-b396-4245-8346-a15799f360ea"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FD:%2FProjects%2FCamps%2FCamps%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.1.0%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUser GenericParameterCount%3D4) ParameterIdentifier%3D3"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="8ffb101c-0860-4091-8ebe-5ee8c2ed08e3"
+                    name="TClaim"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

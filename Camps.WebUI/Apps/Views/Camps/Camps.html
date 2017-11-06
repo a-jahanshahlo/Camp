@@ -1,0 +1,107 @@
+﻿<div ng-controller="campsCtrl" class="container-fluid">
+
+    <div class="row panel-bar">
+
+        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+            <button ng-click="newCamp()" type="button" class="btn btn-success btn-sm">
+                <i class="fa fa-plus"></i>
+                ثبت
+            </button>
+        </div>
+        <div class="col-lg-2 col-md-2 col-xs-2 col-sm-2">
+            <button type="button" class="btn btn-link btn-sm" ng-click="reload()">
+                <i class="fa fa-refresh fa-lg"></i>
+            </button>
+            <button ng-click="addNewCamps()" type="button" class="btn btn-link btn-sm">
+                <i class="fa fa-trash fa-lg"></i>
+            </button>
+        </div>
+        <div class="col-lg-6  col-md-6 col-xs-6 col-sm-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="جستجو">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="fa fa-search fa-lg"></i>
+                    </button>
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" scrollwrapper3" id="thisCampScroll" style="height:420px ">
+        <div class="scroller">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox">
+                        </th>
+                        <th></th>
+                        <th>نام </th>
+                        <th>استان </th>
+                        <th>شهرستان </th>
+                        <th>سوئیت ها </th>
+                        <th>گالری تصاویر</th>
+                        <th>موقعیت </th>
+                        <th>اطلاعات کامل </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr ng-repeat="camp in campsList">
+                        <th scope="row">
+                            <input type="checkbox">
+                        </th>
+                        <td>
+                            <div class="btn-group " role="group" aria-label="...">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-danger" ng-click="deleteCamp(camp.id)">حذف</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-info" ng-click="editCamp(camp.id)">ویرایش</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-warning" ng-click="editCamp(camp.id)">مشاهده</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{camp.name}}</td>
+                        <td>{{camp.addressViewModel.city.provinceName}}</td>
+                        <td>{{camp.addressViewModel.city.name}}</td>
+                        <td>
+                            <button type="button" class="btn btn-xs btn-link">
+                                <i class="fa fa-home fa-lg"></i>
+                            </button>
+                        </td>
+                        <td class="text-center">
+
+                            <button type="button" class="btn btn-xs btn-link" map lat="1" lng="2" g-tip="{{camp.name}}">
+                                <i class="fa fa-picture-o fa-lg"></i>
+                            </button>
+                        </td>
+                        <td class="text-center">
+                            <ul class="list-inline">
+
+                                <button type="button" class="btn btn-xs btn-link" ng-click="showMaps(camp.addressViewModel.longitude,camp.addressViewModel.latitude)" g-tip="{{camp.name}}">
+                                    <i class="fa fa-map-marker fa-lg"></i>
+                                </button>
+
+                            </ul>
+
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-xs btn-link" ng-click="detailCamp(camp.id)">
+                                <i class="fa fa-info-circle fa-lg"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+ 

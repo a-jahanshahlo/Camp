@@ -1,0 +1,148 @@
+﻿<div ng-controller="appsOnDesktopCtrl">
+    <ul class="list-inline" id="desktopicons">
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true">
+            <a ng-click="openCampsWindow()">
+                <img src="/Content/Icons/camps.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge"> اردوگاه ها </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true" >
+            <a ng-click="openCampsWindow()">
+                <img src="/Content/Icons/CampFacilities.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge"> خدمات اردوگاه </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true">
+            <a ng-click="openSuiteWindow()">
+                <img src="/Content/Icons/suite.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge">سوئیت</span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true" >
+            <a>
+                <img src="/Content/Icons/suiteFacilities.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge">امکانات سوئیت</span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true">
+            <a ng-click="openGalleryWindow()">
+                <img src="/Content/Icons/gallery.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge">گالری تصاویر</span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true">
+            <a ng-click="openFestivalwindow()">
+                <img src="/Content/Icons/festival.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge">جشنواره ها </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true">
+            <a ng-click="openQuotawindow()">
+                <img src="/Content/Icons/slice.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge"> سهمیه بندی </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true" >
+            <a>
+                <img src="/Content/Icons/basket.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge"> بسته خدمات </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true" >
+            <a ng-click="openPassengerWindow()">
+                <img src="/Content/Icons/passanger.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge">  مهمان </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true">
+            <a ng-click="openRoleWindow()">
+                <img src="/Content/Icons/boss.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge">  نقش ها / پست ها </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true">
+            <a ng-click="openDeptWindow()">
+                <img src="/Content/Icons/Departman.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge"> دپارتمان </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true">
+            <a ng-click="openReservationWindow()">
+                <img src="/Content/Icons/Reciption.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge"> پذیرش  </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true || boss === true">
+            <a ng-click="openConfirmQuotaWindow()">
+                <img src="/Content/Icons/confirmlist.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge">  سهمیه واحد </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true" >
+            <a>
+                <img src="/Content/Icons/news.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge">  اخبار / رویداد </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true">
+            <a ng-click="openAccountWindow()">
+                <img src="/Content/Icons/user.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge"> کاربران </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true" >
+            <a>
+                <img src="/Content/Icons/sms.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge"> پیامک </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" ng-if="admin === true" >
+            <a>
+                <img src="/Content/Icons/vote.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge"> نظرسنجی </span>
+                </p>
+            </a>
+        </li>
+        <li class="ui-state-default camp-cell text-center" >
+            <a>
+                <img src="/Content/Icons/help.png" alt="Alternate Text" width="50" height="50" class="" />
+                <p>
+                    <span class="label badge-ex label-as-badge"> راهنمای سیستم </span>
+                </p>
+            </a>
+        </li>
+    </ul>
+</div>

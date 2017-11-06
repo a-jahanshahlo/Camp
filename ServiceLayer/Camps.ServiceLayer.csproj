@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55404ACB-09B0-42CB-96A2-69D0B4CFC4E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comps.ServiceLayer</RootNamespace>
+    <AssemblyName>Comps.ServiceLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppServices\AppSettingService.cs" />
+    <Compile Include="AppServices\IXmlRepo.cs" />
+    <Compile Include="AppServices\IAppSettingService.cs" />
+    <Compile Include="AppServices\XmlRepo.cs" />
+    <Compile Include="EFServices\EfAddressService.cs" />
+    <Compile Include="EFServices\EfBillService.cs" />
+    <Compile Include="EFServices\EfBookingService.cs" />
+    <Compile Include="EFServices\EfCampService.cs" />
+    <Compile Include="EFServices\EfCityService.cs" />
+    <Compile Include="EFServices\EfDepartmentDeptRoleService.cs" />
+    <Compile Include="EFServices\EfDepartmentService.cs" />
+    <Compile Include="EFServices\EfDeptRoleService.cs" />
+    <Compile Include="EFServices\EfFacilityPackageService.cs" />
+    <Compile Include="EFServices\EfFacilityService.cs" />
+    <Compile Include="EFServices\EfFacilityUnitService.cs" />
+    <Compile Include="EFServices\EfFestivalService.cs" />
+    <Compile Include="EFServices\EfGalleryService.cs" />
+    <Compile Include="EFServices\EfGenderService.cs" />
+    <Compile Include="EFServices\EfGenericService.cs" />
+    <Compile Include="EFServices\EfItemsInFacilityPackageService.cs" />
+    <Compile Include="EFServices\EfOrganizationService.cs" />
+    <Compile Include="EFServices\EfPackageGradeService.cs" />
+    <Compile Include="EFServices\EfPackageService.cs" />
+    <Compile Include="EFServices\EfPassengerService.cs" />
+    <Compile Include="EFServices\EfPeriodService.cs" />
+    <Compile Include="EFServices\EfPhoneService.cs" />
+    <Compile Include="EFServices\EfFileService.cs" />
+    <Compile Include="EFServices\EfPollService.cs" />
+    <Compile Include="EFServices\EfPositionService.cs" />
+    <Compile Include="EFServices\EfProvinceService.cs" />
+    <Compile Include="EFServices\EfQuotaService.cs" />
+    <Compile Include="EFServices\EfReservationService.cs" />
+    <Compile Include="EFServices\EfRoomService.cs" />
+    <Compile Include="EFServices\EfRoomTypeService.cs" />
+    <Compile Include="EFServices\EfServiceGroupService.cs" />
+    <Compile Include="EFServices\EfServicePackageService.cs" />
+    <Compile Include="EFServices\EfServiceService.cs" />
+    <Compile Include="EFServices\EfSuiteGradeService.cs" />
+    <Compile Include="EFServices\EfStockService.cs" />
+    <Compile Include="EFServices\EfSuiteFacilitieService.cs" />
+    <Compile Include="EFServices\EfSuiteFacilityPackageService.cs" />
+    <Compile Include="EFServices\EfSuiteOwnerService.cs" />
+    <Compile Include="EFServices\EfSuiteRateService.cs" />
+    <Compile Include="EFServices\EfSuiteService.cs" />
+    <Compile Include="EFServices\EfSuiteTypeService.cs" />
+    <Compile Include="EFServices\EfUserInDeptRoleService.cs" />
+    <Compile Include="EFServices\EfUserServiceService.cs" />
+    <Compile Include="Interfaces\ExtendInterface\ICheckTypeService.cs" />
+    <Compile Include="Interfaces\IAddressService.cs" />
+    <Compile Include="Interfaces\IBillService.cs" />
+    <Compile Include="Interfaces\IBookingService.cs" />
+    <Compile Include="Interfaces\ICampService.cs" />
+    <Compile Include="Interfaces\ICityService.cs" />
+    <Compile Include="Interfaces\IDepartmentDeptRoleService.cs" />
+    <Compile Include="Interfaces\IDeptRoleUserService.cs" />
+    <Compile Include="Interfaces\IDepartmentService.cs" />
+    <Compile Include="Interfaces\IDeptRoleService.cs" />
+    <Compile Include="Interfaces\IFacilityPackageService.cs" />
+    <Compile Include="Interfaces\IFacilityService.cs" />
+    <Compile Include="Interfaces\IFacilityUnitService.cs" />
+    <Compile Include="Interfaces\IFestivalService.cs" />
+    <Compile Include="Interfaces\IGalleryService.cs" />
+    <Compile Include="Interfaces\IGenderService.cs" />
+    <Compile Include="Interfaces\IGenericService.cs" />
+    <Compile Include="Interfaces\IItemsInFacilityPackageService.cs" />
+    <Compile Include="Interfaces\IOrganizationService.cs" />
+    <Compile Include="Interfaces\IPackageGradeService.cs" />
+    <Compile Include="Interfaces\IPackageService.cs" />
+    <Compile Include="Interfaces\IPassengerService.cs" />
+    <Compile Include="Interfaces\IPeriodService.cs" />
+    <Compile Include="Interfaces\IPhoneService.cs" />
+    <Compile Include="Interfaces\IPhotoService.cs" />
+    <Compile Include="Interfaces\IPollService.cs" />
+    <Compile Include="Interfaces\IPositionService.cs" />
+    <Compile Include="Interfaces\IProvinceService.cs" />
+    <Compile Include="Interfaces\IQuotaService.cs" />
+    <Compile Include="Interfaces\IReservationService.cs" />
+    <Compile Include="Interfaces\IRoomService.cs" />
+    <Compile Include="Interfaces\IRoomTypeService.cs" />
+    <Compile Include="Interfaces\IServiceGroupService.cs" />
+    <Compile Include="Interfaces\IServicePackageService.cs" />
+    <Compile Include="Interfaces\IServiceService.cs" />
+    <Compile Include="Interfaces\IStateService.cs" />
+    <Compile Include="Interfaces\IStockService.cs" />
+    <Compile Include="Interfaces\ISuiteFacilitieService.cs" />
+    <Compile Include="Interfaces\ISuiteFacilityPackageService.cs" />
+    <Compile Include="Interfaces\ISuiteGradeService.cs" />
+    <Compile Include="Interfaces\ISuiteOwnerService.cs" />
+    <Compile Include="Interfaces\ISuiteRateService.cs" />
+    <Compile Include="Interfaces\ISuiteService.cs" />
+    <Compile Include="Interfaces\ISuiteTypeService.cs" />
+    <Compile Include="Interfaces\IUserServiceService.cs" />
+    <Compile Include="Interfaces\NonEntity\IPersonalSetting.cs" />
+    <Compile Include="IOServices\IOBase.cs" />
+    <Compile Include="Security\ApplicationRoleManager.cs" />
+    <Compile Include="Security\ApplicationSignInManager.cs" />
+    <Compile Include="Security\ApplicationUserManager.cs" />
+    <Compile Include="Security\CustomRoleStore.cs" />
+    <Compile Include="Security\CustomUserStore.cs" />
+    <Compile Include="Security\EmailService.cs" />
+    <Compile Include="Security\IApplicationRoleManager.cs" />
+    <Compile Include="Security\IApplicationSignInManager.cs" />
+    <Compile Include="Security\IApplicationUserManager.cs" />
+    <Compile Include="Security\ICustomRoleStore.cs" />
+    <Compile Include="Security\ICustomUserStore.cs" />
+    <Compile Include="Security\SmsService.cs" />
+    <Compile Include="Security\TestCodeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Camps.CommonLib\Camps.CommonLib.csproj">
+      <Project>{0c12ddb7-b4ae-446f-a2a9-a03b06aa33e3}</Project>
+      <Name>Camps.CommonLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Camps.Contract\Camps.Contract.csproj">
+      <Project>{029F9457-3D0B-4263-B2C9-0E3CA14CF8AB}</Project>
+      <Name>Camps.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\Camps.DataLayer.csproj">
+      <Project>{04CD4A15-711D-4B2D-AFBE-196A6A5953DC}</Project>
+      <Name>Camps.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainLayer\Camps.DomainLayer.csproj">
+      <Project>{1aef5868-dff3-4d12-9d51-4d328a489f4a}</Project>
+      <Name>Camps.DomainLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid.SmtpApi">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.3.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.6.1.0\lib\SendGridMail.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\Base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

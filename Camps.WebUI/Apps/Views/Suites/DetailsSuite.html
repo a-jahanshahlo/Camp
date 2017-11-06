@@ -1,0 +1,159 @@
+﻿<div class="container ">
+
+    <ul class="nav nav-tabs" c-tab>
+        <li role="presentation" class="active"><a href="#home">اطلاعات</a></li>
+        <li role="presentation"><a href="#gallery">گالری</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="details-tab scrollwrapper2" c-iscroll>
+
+        <div class="row">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <table class="table table-hover">
+
+                        <tbody>
+                            <tr>
+                                <td width="200">نام سوئیت</td>
+                                <td>
+                                    <div class="field">
+                                        <label>{{suiteDetails.suiteName}}</label>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="200">شماره سوئیت</td>
+                                <td>
+                                    <div class="field">
+                                        <label>{{suiteDetails.suiteNumber}}</label>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="200"> نام اردوگاه</td>
+                                <td>
+
+                                    <label>{{suiteDetails.camp.name}}</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>درجه سوئیت</td>
+                                <td>
+                                    <label>{{suiteDetails.suiteGrade.name}}</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>مالک سوئیت</td>
+                                <td>
+                                    <label>{{suiteDetails.suiteOwner.name}}</label>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>نوع سوئیت</td>
+                                <td>
+
+                                    <label>{{suiteDetails.suiteType.name}}</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>تعداد اطاق </td>
+                                <td>
+                                    <label>{{suiteDetails.roomCount}}</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> ظرفیت مسافر </td>
+                                <td>
+                                    <label>{{suiteDetails.capacity}}</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>تلفن </td>
+                                <td>
+                                    <div ng-repeat="phone in suiteDetails.phones">
+                                        <label>{{$index + 1}}#</label>
+                                        <label>{{phone.phoneNumber}}</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>نام گالری</td>
+                                <td>
+                                    <label>{{suiteDetails.gallery.name}}</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane " id="gallery">
+                    <div class="container  " style="background-color: rgb(231, 231, 231); width: 700px;margin: 0px">
+                        <div id="products" class="row list-group products">
+                            <div class="item  col-xs-4 col-lg-4 mouse-hover list-group-item-block" ng-repeat="photo in suiteDetails.gallery.photos">
+                                <div class="thumbnail">
+                                    <a class="gallery-button  group list-group-image" href="{{'/api/files/thumbnail/'}}{{ photo.guid}}{{ '?&width=800&heigth=800'}}" title="{{photo.name}}" type="{{photo.extention}}" data-gallery="">
+                                        <img ng-src="{{'/api/files/GetFilethumb/'}}{{photo.guid }}" class="thumbnail-img" alt="Alternate Text" width="200" height="150" />
+                                    </a>
+                                    <div class="caption">
+                                        <h4 class="group inner list-group-item-heading">
+                                            {{photo.name}}
+                                        </h4>
+                                        <p class="group inner list-group-item-text">
+                                            {{photo.desctiption}}
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="item  col-xs-4 col-lg-4 mouse-hover list-group-item-block" ng-repeat="photo in suiteDetails.gallery.videos">
+                                <div class="thumbnail">
+                                    <a class="gallery-button  group list-group-image" href="{{'/api/files/thumbnail/'}}{{ photo.guid}}{{ '?&width=800&heigth=800'}}" title="{{photo.name}}" type="{{photo.extention}}" data-gallery="">
+                                        <img ng-src="{{'/api/files/GetFilethumb/'}}{{photo.guid }}" class="thumbnail-img" alt="Alternate Text" width="200" height="150" />
+                                    </a>
+                                    <div class="caption">
+                                        <h4 class="group inner list-group-item-heading">
+                                            {{photo.name}}
+                                        </h4>
+                                        <p class="group inner list-group-item-text">
+                                            {{photo.desctiption}}
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="item  col-xs-4 col-lg-4 mouse-hover list-group-item-block" ng-repeat="photo in suiteDetails.gallery.audios">
+                                <div class="thumbnail">
+                                    <a class="gallery-button  group list-group-image" href="{{'/api/files/thumbnail/'}}{{ photo.guid}}{{ '?&width=800&heigth=800'}}" title="{{photo.name}}" type="{{photo.extention}}" data-gallery="">
+                                        <img ng-src="{{'/api/files/GetFilethumb/'}}{{photo.guid }}" class="thumbnail-img" alt="Alternate Text" width="200" height="150" />
+                                    </a>
+                                    <div class="caption">
+                                        <h4 class="group inner list-group-item-heading">
+                                            {{photo.name}}
+                                        </h4>
+                                        <p class="group inner list-group-item-text">
+                                            {{photo.desctiption}}
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿
+
+    <div id="products" class=" list-group products" >
+        <div class="item  col-xs-4 col-lg-4 mouse-hover list-group-item-block" ng-repeat="photo in gallery">
+            <div class="thumbnail">
+                <a class="gallery-button  group list-group-image" href="{{'/api/files/thumbnail/'}}{{ photo.guid}}{{ '?&width=800&heigth=800'}}" title="{{photo.name}}" type="{{photo.extention}}" data-gallery="">
+                    <img ng-src="{{'/api/files/GetFilethumb/'}}{{photo.guid }}" class="thumbnail-img" alt="Alternate Text" width="200" height="150" />
+                </a>
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        {{photo.name}}
+                    </h4>
+                    <p class="group inner list-group-item-text">
+                        {{photo.desctiption}}
+                    </p>
+
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-xs-12 col-md-12 ">
+
+                    <div class="checkbox">
+                        <label>
+                            <input class="btn btn-success" type="checkbox" id="x{{photo.guid}}" ng-click="addFileToGallery(photo.guid,$event,$index)"> افزودن
+                            <button ng-click="deleteFile(photo.guid)" type="button" class="fa fa-trash btn  btn-danger btn-xs"></button>
+                            <button ng-click="updateFile(photo)" type="button" class="fa fa-pencil-square-o btn  btn-default btn-xs"></button>
+                            <button ng-click="downloadFile(photo)" type="button" class="fa fa-download btn  btn-default btn-xs"></button>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+ 

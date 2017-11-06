@@ -1,0 +1,53 @@
+﻿ 
+<p>
+    <!--watching model:
+    <div class="button" ng-file-select ng-model="files">Upload using model $watch</div>
+    <div class="button" ng-file-select ng-file-change="onFileSelect(files)">Upload on file change</div>-->
+    <!--<input type="file" ng-file-select="onFileSelect(files)" multiple>-->
+    <button ng-file-select ng-model="file" ng-file-change="addImage(file)" type="button" class="btn btn-success btn-sm">
+        <i class="fa fa-plus "></i>
+        افزودن فایل
+    </button>
+    <table class="table table-condensed table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>درصد بارگذاری</th>
+                <th>نام </th>
+                <th>اندازه </th>
+                <th>نوع</th>
+            </tr>
+        </thead>
+        <tr ng-repeat="item in files" >
+            <td class="" style=" width :100px">
+                <button type="button" class="btn btn-warning cancel" ng-click="removeFile(item)">
+                    <i class="fa fa-ban"></i>
+                    <span>انصراف</span>
+                </button>
+            </td>
+            <td class="" style=" width :100px">
+                <button type="button" class="btn btn-primary start" ng-click="onFileSelect(item)">
+                    <i class="fa fa-upload"></i>
+                    <span>ارسال</span>
+                </button>
+            </td>
+            <td class="" style=" width :40%">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{item.progress}}" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': item.progress }">
+                        <span class="sr-only">{{item.progress}}% درصد بارگذاری</span>
+                    </div>
+                </div>
+            </td>
+            <td>{{item.file[0].name}}</td>
+            <td>{{item.file[0].size / 1048576 | setDecimal:2}} MB</td>
+            <td>{{item.file[0].type}}</td>
+        </tr>
+
+    </table>
+    <!--Drop File:
+    <div ng-file-drop ng-model="files" class="drop-box"
+         drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+         accept=".jpg,.png,.pdf">Drop Images or PDFs files here</div>
+    <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>-->
+</p>

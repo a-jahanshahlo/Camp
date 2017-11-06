@@ -1,0 +1,51 @@
+﻿<div class="container-fluid">
+
+    <div class=" " id="scrollspecificperiodframe" style="height:420px " c-paginationperiod fetch-fn="specificDeptFetchData" datasource="specificDepartmentDeptRoleList" c-skip="skipSpecific" c-pagesize="pagesizeSpecific" c-festivalid="festivalid">
+        <div class="scroller">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox">
+                        </th>
+                        <th></th>
+                        <th> دپارتمان </th>
+                        <th> پست </th>
+                        <th> فعال/غیر فعال </th>
+ 
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr ng-repeat="departmentDeptRole in specificDepartmentDeptRoleList">
+                        <th scope="row">
+                            <input type="checkbox">
+                        </th>
+                        <td>
+                            <div class="btn-group " role="group" aria-label="...">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-danger" ng-click="delete(departmentDeptRole.id)">حذف</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-info" ng-click="openEditModal(departmentDeptRole)">ویرایش</button>
+                                </div>
+
+                            </div>
+                        </td>
+
+                        <td>{{departmentDeptRole.departmentIndexViewModel .depTitle }}</td>
+                        <td>{{departmentDeptRole.deptRoleIndexViewModel .roleTitle}}</td>
+                        <td ng-bind-html="departmentDeptRole.isActive | setFaBoolean"></td>
+ 
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+

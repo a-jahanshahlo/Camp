@@ -1,0 +1,97 @@
+﻿<div class="container scrollwrapper2" id="editCampScroll">
+    <div class="scroller">
+        <div class="row">
+
+            <table class="table table-hover">
+
+                <tbody>
+                    <tr>
+                        <td width="200">نام اردوگاه</td>
+                        <td>
+                            <div class="field">
+                                <input type="text" ng-required ng-maxlength="200" ng-model="campDetails.name" />
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200"> مساحت اردوگاه</td>
+                        <td>
+                            <div class="field">
+                                <input type="text" ng-required ng-maxlength="200" ng-model="campDetails.areaSize" />
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>استان</td>
+                        <td>
+
+                            <select id="item" ng-model="item" ng-change="getCities(item)">
+                                <option value=''>انتخاب کنید...</option>
+                                <option ng-repeat="item in provinces" value="{{item.id}}">{{item.name}}</option>
+
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>شهرستان</td>
+                        <td>
+
+                            <select id="city" ng-model="campDetails.addressViewModel.city" ng-options="city.name for city in cities track by city.id">
+                                <option value=''>انتخاب کنید...</option>
+                                <!--<option value="{{city}}">{{city }}</option>-->
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>آدرس</td>
+                        <td>
+
+                            <p class="clearfix">آدرس کامل</p>
+                            <textarea ng-model="campDetails.addressViewModel.fullAddress" ng-change="refreshScrollbar()"></textarea>
+
+
+                            <p class="clearfix">منطقه </p>
+                            <input type="text" ng-model="campDetails.addressViewModel.state" />
+
+                            <p class="clearfix">کد پستی </p>
+                            <input type="text" ng-model="campDetails.addressViewModel.zip" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>تلفن </td>
+                        <td>
+                            <button class="btn btn-link fa fa-plus bg-primary" ng-click="addPhoneEdit()"></button>
+                            <div ng-repeat="phone in campDetails.phoneViewModels">
+                                <button class="btn btn-link fa fa-minus bg-danger" ng-click="minusPhoneEdit($index)"></button>
+                                <input type="text" ng-model="phone.phoneNumber" />
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>موقعیت جغرافیایی</td>
+                        <td>
+                            <div style="width: 480px; height: 300px" id="map1"></div>
+                            <button ng-click="setMaps()" class="fa-map-marker fa btn btn-link fa-location-arrow"> </button>
+                            <input type="text" ng-model="campDetails.addressViewModel.longitude" />
+                            <input type="text" ng-model="campDetails.addressViewModel.latitude" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-success" ng-click="updateCamp(campDetails.id,campDetails)">بروز رسانی</button>
+                         
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

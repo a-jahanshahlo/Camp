@@ -1,0 +1,90 @@
+﻿<div ng-controller="quotaCtrl">
+    <div class="row panel-bar clear-fix">
+
+        <div class="col-lg-4">
+            <button ng-click="newModal()" type="button" class="btn btn-success btn-sm">
+                <i class="fa fa-plus"></i>
+                سهمیه جدید
+            </button>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-link btn-sm" ng-click="reloadData()">
+                <i class="fa fa-refresh fa-lg"></i>
+            </button>
+            <button ng-click="addNewCamps()" type="button" class="btn btn-link btn-sm">
+                <i class="fa fa-trash fa-lg"></i>
+            </button>
+        </div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="جستجو">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="fa fa-search fa-lg"></i>
+                    </button>
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" scrollwrapper3  " style="height:420px " c-pagination fetch-fn="fetchData" datasource="quotaList" c-skip="skip" c-pagesize="pagesize">
+
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox">
+                    </th>
+                    <th></th>
+                    <th> تاریخ ایجاد </th>
+                    <th>مهلت پاسخگویی</th>
+             
+                    <th>دپارتمان</th>
+                    <th>راهبر سیستم </th>
+                    <th>اردوگاه</th>
+                   
+                    <th>جشنواره </th>
+                    <th> دوره</th>
+                    <th> تائید شده</th>
+                    <th> انصراف</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="quota in quotaList">
+                    <th scope="row">
+                        <input type="checkbox">
+                    </th>
+                    <td>
+                        <div class="btn-group " role="group" aria-label="...">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-xs btn-danger" ng-click="delete(quota.id)">حذف</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-xs btn-info" ng-click="openEditModal(quota)">ویرایش</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{quota.addDate | changeToPersian}}</td>
+                    <td>{{quota.deadLineTime | changeToPersian}}</td>
+  
+                    <td>{{quota.departmentIndexViewModel.depTitle}}</td>
+                    <td>{{quota.operatorUserViewModel.firstName}} {{quota.operatorUserViewModel.lastName}}</td>
+                    <td>{{quota.periodIndexViewModel.campsIndexViewModel.name }} </td>
+                    <td>{{quota.periodIndexViewModel.festivalIndexViewModel.festivalTitle}}</td>
+                    <td>{{quota.periodIndexViewModel.periodTitle}}</td>
+                    <td ng-bind-html="quota.passengerUserId | setIsConfirm"></td>
+                    <td ng-bind-html="quota.isRefuse | setYesNoBoolean"></td>
+  
+
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

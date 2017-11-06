@@ -1,0 +1,31 @@
+﻿<div class="container scrollwrapper2" id="scrollnewdeptroleframe">
+    <div class="scroller">
+        <div class="row">
+
+            <table class="table table-hover">
+
+                <tbody>
+                    <tr>
+                        <td width="100">عنوان پست </td>
+                        <td>
+                            <div class="field">
+                                <input type="text" ng-required ng-maxlength="200" ng-model="deptRole.RoleTitle" />
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-success" ng-click="addNew(deptRole)">ثبت</button>
+                            <!--<button ng-if="isEdit == false" ng-click="editModeCamp()" class="btn btn-default">ویرایش</button>-->
+                            <!--<button ng-if="isEdit == true" class="btn btn-success">ویرایش</button>-->
+                            <button ng-click="cancelNewModal()" class="btn btn-danger">انصراف</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

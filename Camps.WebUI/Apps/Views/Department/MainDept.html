@@ -1,0 +1,75 @@
+﻿<div ng-controller="deptCtrl" class="container-fluid">
+
+    <div class="row panel-bar">
+
+        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+            <button ng-click="newDeptModal()" type="button" class="btn btn-success btn-sm">
+                <i class="fa fa-plus"></i>
+                ثبت
+            </button>
+            <button ng-click="newDepartmentDeptRoleModal()" type="button" class="btn btn-success btn-sm">
+                <i class="fa fa-plus"></i>
+                پست جدید
+            </button>
+        </div>
+        <div class="col-lg-2 col-md-2 col-xs-2 col-sm-2">
+            <button type="button" class="btn btn-link btn-sm" ng-click="reloadData()">
+                <i class="fa fa-refresh fa-lg"></i>
+            </button>
+            <button ng-click="addNewCamps()" type="button" class="btn btn-link btn-sm">
+                <i class="fa fa-trash fa-lg"></i>
+            </button>
+        </div>
+        <div class="col-lg-6  col-md-6 col-xs-6 col-sm-6">
+            <div class="input-group">
+    
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" scrollwrapper3" id="thisDeptScroll" style="height: 420px" c-pagination fetch-fn="fetchData" datasource="deptList" c-skip="skip" c-pagesize="pagesize">
+        <div class="scroller">
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox">
+                    </th>
+                    <th></th>
+                    <th>عنوان </th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr ng-repeat="dept in deptList">
+                    <th scope="row">
+                        <input type="checkbox">
+                    </th>
+                    <td>
+                        <div class="btn-group " role="group" aria-label="...">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-xs btn-danger" ng-click="deleteDept(dept.id)">حذف</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-xs btn-info" ng-click="openEditDeptModal(dept)">ویرایش</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-xs btn-primary" ng-click="getSpecificDepartmentDeptRole(dept.id)">پست های دپارتمان</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{dept.depTitle}}</td>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div ng-controller="departmentDeptRoleCtrl"></div>
+</div>
+

@@ -1,0 +1,79 @@
+﻿<div ng-controller="accountCtrl" class="container-fluid">
+
+    <div class="row panel-bar">
+
+        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+            <button ng-click="newModal()" type="button" class="btn btn-success btn-sm">
+                <i class="fa fa-plus"></i>
+                ثبت
+            </button>
+        </div>
+        <div class="col-lg-2 col-md-2 col-xs-2 col-sm-2">
+            <button type="button" class="btn btn-link btn-sm" ng-click="reloadData()">
+                <i class="fa fa-refresh fa-lg"></i>
+            </button>
+            <button ng-click="addNewCamps()" type="button" class="btn btn-link btn-sm">
+                <i class="fa fa-trash fa-lg"></i>
+            </button>
+        </div>
+        <div class="col-lg-6  col-md-6 col-xs-6 col-sm-6">
+            <div class="input-group">
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" scrollwrapper3" id="thisAccountScroll" style="height:420px " c-pagination fetch-fn="fetchData" datasource="accountList" c-skip="skip" c-pagesize="pagesize">
+        <div class="scroller">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox">
+                        </th>
+                        <th></th>
+                        <th>مسئول حوزه </th>
+                        <th>نام کاربری</th>
+                        <th>همراه </th>
+                        <th>دسترسی ها </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr ng-repeat="account in accountList">
+                        <th scope="row">
+                            <input type="checkbox">
+                        </th>
+                        <td>
+                            <div class="btn-group " role="group" aria-label="...">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-danger" ng-click="delete(account.id)">حذف</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-info" ng-click="openEditModal(account)">ویرایش</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-primary" ng-click="openPermissionModal(account)">نقش ها های کاربر</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-default" ng-click="openResetPassModal(account)">کلمه عبور</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="checkbox" ng-click="confirmer($event,account.id)">
+                        </td>
+                        <td>{{account.userName}}</td>
+                        <td>{{account.mobile}}</td>
+                        <td><user-roles placement="'right'" user-id="account.id"></user-roles></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

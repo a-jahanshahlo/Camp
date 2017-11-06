@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C10CBC27-28EC-4723-9C02-1F61DE476972}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Camps.WebUI</RootNamespace>
+    <AssemblyName>Camps.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.3\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.3\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Persia">
+      <HintPath>..\packages\Persia.NET.3.0.4727\lib\Persia.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Web">
+      <HintPath>..\packages\structuremap.web.3.1.0.133\lib\net40\StructureMap.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Spatial, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.3\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.4.0\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="AutoMapper\AutoMapperWebConfiguration.cs" />
+    <Compile Include="AutoMapper\IoCBinder.cs" />
+    <Compile Include="Base\ServiceActivator.cs" />
+    <Compile Include="Base\StructureMapControllerFactory.cs" />
+    <Compile Include="Controllers\API\AccountApiController.cs" />
+    <Compile Include="Controllers\API\ConfirmQuotaController.cs" />
+    <Compile Include="Controllers\API\DepartmentController.cs" />
+    <Compile Include="Controllers\API\NavbarController.cs" />
+    <Compile Include="Controllers\API\UserInDeptRolesController.cs" />
+    <Compile Include="Controllers\API\DeptRolesController.cs" />
+    <Compile Include="Controllers\API\FestivalController.cs" />
+    <Compile Include="Controllers\API\PassengerController.cs" />
+    <Compile Include="Controllers\API\PeriodController.cs" />
+    <Compile Include="Controllers\API\PositionController.cs" />
+    <Compile Include="Controllers\API\PublicController.cs" />
+    <Compile Include="Controllers\API\QuotaController.cs" />
+    <Compile Include="Controllers\API\ReservationController.cs" />
+    <Compile Include="Controllers\API\DepartmentDeptRoleController.cs" />
+    <Compile Include="Controllers\API\SuiteController.cs" />
+    <Compile Include="Controllers\API\ValuesController.cs" />
+    <Compile Include="Controllers\MVC\AccountController.cs" />
+    <Compile Include="Helpers\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Controllers\API\LocationController.cs" />
+    <Compile Include="Controllers\AppSettingsController.cs" />
+    <Compile Include="Controllers\CampsController.cs" />
+    <Compile Include="Controllers\FilesController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="ViewModels\Accounts\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Accounts\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Accounts\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Accounts\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Accounts\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Accounts\VerifyMobileCodeViewModel.cs" />
+    <Compile Include="ViewModels\Accounts\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\AppSettings\AppSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Booking\BookingIndexViewModel.cs" />
+    <Compile Include="ViewModels\Camps\CampsIndexViewModel.cs" />
+    <Compile Include="ViewModels\UserInDeptRole\UserInDeptRoleEditViewModel.cs" />
+    <Compile Include="ViewModels\UserInDeptRole\UserInDeptRoleCreateViewModel.cs" />
+    <Compile Include="ViewModels\UserInDeptRole\UserInDeptRoleIndexViewModel.cs" />
+    <Compile Include="ViewModels\DepartmentDeptRole\DepartmentDeptRoleEditViewModel.cs" />
+    <Compile Include="ViewModels\DepartmentDeptRole\DepartmentDeptRoleIndexViewModel.cs" />
+    <Compile Include="ViewModels\Department\DepartmentCreateViewModel.cs" />
+    <Compile Include="ViewModels\Department\DepartmentEditViewModel.cs" />
+    <Compile Include="ViewModels\Department\DepartmentIndexViewModel.cs" />
+    <Compile Include="ViewModels\Department\GenderIndexViewModel.cs" />
+    <Compile Include="ViewModels\DeptRoles\DeptRoleIndexViewModel.cs" />
+    <Compile Include="ViewModels\Festival\FestivalCreateViewModel.cs" />
+    <Compile Include="ViewModels\Festival\FestivalEditViewModel.cs" />
+    <Compile Include="ViewModels\Festival\FestivalIndexViewModel.cs" />
+    <Compile Include="ViewModels\Festival\PeriodCreateViewModel.cs" />
+    <Compile Include="ViewModels\Festival\PeriodEditViewModel.cs" />
+    <Compile Include="ViewModels\Festival\PeriodIndexViewModel.cs" />
+    <Compile Include="ViewModels\Position\PositionCreateViewModel.cs" />
+    <Compile Include="ViewModels\Position\PositionEditViewModel.cs" />
+    <Compile Include="ViewModels\Position\PositionIndexViewModel.cs" />
+    <Compile Include="ViewModels\Profile\ProfileCreateViewModel.cs" />
+    <Compile Include="ViewModels\Quota\QuotaIndexViewModel.cs" />
+    <Compile Include="ViewModels\Reservation\ReservationCrateViewModel.cs" />
+    <Compile Include="ViewModels\Reservation\ReservationEditViewModel.cs" />
+    <Compile Include="ViewModels\Reservation\ReservationIndexViewModel.cs" />
+    <Compile Include="ViewModels\DepartmentDeptRole\DepartmentDeptRoleCreateViewModel.cs" />
+    <Compile Include="ViewModels\SuiteGrade\SuiteGradeIndexViewModel.cs" />
+    <Compile Include="ViewModels\Gallery\AddedFileToGalleryViewModel.cs" />
+    <Compile Include="ViewModels\Passengers\PassengerIndexViewModel.cs" />
+    <Compile Include="ViewModels\Suites\SuiteCreateViewModel.cs" />
+    <Compile Include="ViewModels\Suites\SuiteIndexViewModel.cs" />
+    <Compile Include="ViewModels\User\UserIndexViewModel.cs" />
+    <Compile Include="ViewModels\User\UserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppConfig\Comps.DomainLayer.AppSetting.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Apps\AddNew.html" />
+    <Content Include="Apps\CampsApp.js" />
+    <Content Include="Apps\Common\scurity.js" />
+    <Content Include="Apps\Controllers\Account\accountCtrl.js" />
+    <Content Include="Apps\Controllers\addNewCtrl.js" />
+    <Content Include="Apps\Controllers\appCtrl.js" />
+    <Content Include="Apps\Controllers\AppSettings\appSettingsCtrl.js" />
+    <Content Include="Apps\Controllers\AppSettings\backgroundImagesListCtrl.js" />
+    <Content Include="Apps\Controllers\AppsOnDesktop\appsOnDesktopCtrl.js" />
+    <Content Include="Apps\Controllers\Camps\campsCtrl.js" />
+    <Content Include="Apps\Controllers\ConfirmQuota\confirmQuotaCtrl.js" />
+    <Content Include="Apps\Controllers\dashboardCtrl.js" />
+    <Content Include="Apps\Controllers\DepartmentDeptRole\departmentDeptRole.js" />
+    <Content Include="Apps\Controllers\Department\deptCtrl.js" />
+    <Content Include="Apps\Controllers\DeptRole\deptRoleCtrl.js" />
+    <Content Include="Apps\Controllers\desktopCtrl.js" />
+    <Content Include="Apps\Controllers\Directives\iscrollDir.js" />
+    <Content Include="Apps\Controllers\Directives\mapDir.js" />
+    <Content Include="Apps\Controllers\Festival\festivalCtrl.js" />
+    <Content Include="Apps\Controllers\Gallery\allFileCategoryCtrl.js" />
+    <Content Include="Apps\Controllers\Gallery\allFilesCtrl.js" />
+    <Content Include="Apps\Controllers\Gallery\audiosCategoryCtrl.js" />
+    <Content Include="Apps\Controllers\Gallery\galleryCtrl.js" />
+    <Content Include="Apps\Controllers\Gallery\photosCategoryCtrl.js" />
+    <Content Include="Apps\Controllers\Gallery\videosCategoryCtrl.js" />
+    <Content Include="Apps\Controllers\indexCtrl.js" />
+    <Content Include="Apps\Controllers\NavBar\navBarCtrl.js" />
+    <Content Include="Apps\Controllers\Passengers\passengerCtrl.js" />
+    <Content Include="Apps\Controllers\Period\periodCtrl.js" />
+    <Content Include="Apps\Controllers\Quota\quotaCtrl.js" />
+    <Content Include="Apps\Controllers\Reservation\reservationCtrl.js" />
+    <Content Include="Apps\Controllers\SimpleDirectiveCtrl.js" />
+    <Content Include="Apps\Controllers\Suites\suiteCtrl.js" />
+    <Content Include="Apps\Controllers\UserInDeptRole\userInDeptRoleCtrl.js" />
+    <Content Include="Apps\Controllers\userProfileCtrl.js" />
+    <Content Include="Apps\Details.html" />
+    <Content Include="Apps\Directives\publicDir.js" />
+    <Content Include="Apps\Filters\flrDecimalPoint.js" />
+    <Content Include="Apps\index.html" />
+    <Content Include="Apps\Messages\DefaultErrorMessage.html" />
+    <Content Include="Apps\Messages\EmailMessage.html" />
+    <Content Include="Apps\Services\Account\accountService.js" />
+    <Content Include="Apps\Services\AppSettings\appSettingsService.js" />
+    <Content Include="Apps\Services\Authentication\authService.js" />
+    <Content Include="Apps\Services\Camps\CampsService.js" />
+    <Content Include="Apps\Services\ConfirmQuota\confirmQuotaService.js" />
+    <Content Include="Apps\Services\DepartmentDeptRole\departmentDeptRoleService.js" />
+    <Content Include="Apps\Services\Department\deptService.js" />
+    <Content Include="Apps\Services\DeptRole\deptRoleService.js" />
+    <Content Include="Apps\Services\EventData.js" />
+    <Content Include="Apps\Services\Festival\festivalService.js" />
+    <Content Include="Apps\Services\Gallery\galleryService.js" />
+    <Content Include="Apps\Services\Gallery\shareFilesDataFa.js" />
+    <Content Include="Apps\Services\Gallery\shareGalleryDataFa.js" />
+    <Content Include="Apps\Services\Global\Global.js" />
+    <Content Include="Apps\Services\Locations\locationServices.js" />
+    <Content Include="Apps\Services\NavBar\navBarService.js" />
+    <Content Include="Apps\Services\Passenger\passengerService.js" />
+    <Content Include="Apps\Services\Period\periodService.js" />
+    <Content Include="Apps\Services\Public\PublicService.js" />
+    <Content Include="Apps\Services\Quota\quotaService.js" />
+    <Content Include="Apps\Services\Reservation\reservationService.js" />
+    <Content Include="Apps\Services\Suites\SuiteService.js" />
+    <Content Include="Apps\Services\UserInDeptRole\userInDeptRoleService.js" />
+    <Content Include="Apps\Services\Users\personalizeConfig.js" />
+    <Content Include="Apps\Services\Users\shareUserDataFa.js" />
+    <Content Include="Apps\Services\Users\userServices.js" />
+    <Content Include="Apps\Templates\Camps\Galleries.html" />
+    <Content Include="Apps\Templates\Camps\GalleryDetails.html" />
+    <Content Include="Apps\Templates\Directives\MapDir.html" />
+    <Content Include="Apps\Templates\Gallery\allFileCategory.html" />
+    <Content Include="Apps\Templates\Gallery\allFiles.html" />
+    <Content Include="Apps\Templates\Gallery\audioCategory.html" />
+    <Content Include="Apps\Templates\Gallery\FilesBoard.html" />
+    <Content Include="Apps\Templates\Gallery\GalleryCategory.html" />
+    <Content Include="Apps\Templates\Gallery\GalleryDetails.html" />
+    <Content Include="Apps\Templates\Gallery\photoCategory.html" />
+    <Content Include="Apps\Templates\Gallery\RenameGallery.html" />
+    <Content Include="Apps\Templates\Gallery\updateFile.html" />
+    <Content Include="Apps\Templates\Gallery\VideoCategory.html" />
+    <Content Include="Apps\Templates\SimpleDirective.html" />
+    <Content Include="Apps\Templates\Upload\UploadPanel.html" />
+    <Content Include="Apps\Views\Account\EditAccount.html" />
+    <Content Include="Apps\Views\Account\MainAccount.html" />
+    <Content Include="Apps\Views\Account\NewAccount.html" />
+    <Content Include="Apps\Views\Account\PermissionAccount.html" />
+    <Content Include="Apps\Views\Account\ResetPassword.html" />
+    <Content Include="Apps\Views\Account\RoleDeptAccount.html" />
+    <Content Include="Apps\Views\AppSettings\BackgroundImagesList.html" />
+    <Content Include="Apps\Views\AppSettings\MainViewAppSettings.html" />
+    <Content Include="Apps\Views\AppsOnDesktop\AppsOnDesktop.html" />
+    <Content Include="Apps\Views\Camps\Camps.html" />
+    <Content Include="Apps\Views\Camps\DetailsCamp.html" />
+    <Content Include="Apps\Views\Camps\EditCamp.html" />
+    <Content Include="Apps\Views\Camps\NewCamp.html" />
+    <Content Include="Apps\Views\ConfirmQuota\EditConfirmQuota.html" />
+    <Content Include="Apps\Views\ConfirmQuota\MainConfirmQuota.html" />
+    <Content Include="Apps\Views\ConfirmQuota\NewConfirmQuota.html" />
+    <Content Include="Apps\Views\DepartmentDeptRole\EditDepartmentDeptRole.html" />
+    <Content Include="Apps\Views\DepartmentDeptRole\NewDepartmentDeptRole.html" />
+    <Content Include="Apps\Views\DepartmentDeptRole\SpecificDepartmentDeptRole.html" />
+    <Content Include="Apps\Views\Department\EditDept.html" />
+    <Content Include="Apps\Views\Department\MainDept.html" />
+    <Content Include="Apps\Views\Department\NewDept.html" />
+    <Content Include="Apps\Views\DeptRole\EditDeptRole.html" />
+    <Content Include="Apps\Views\DeptRole\NewDeptRole.html" />
+    <Content Include="Apps\Views\DeptRole\MainDeptRole.html" />
+    <Content Include="Apps\Views\Festival\EditFestival.html" />
+    <Content Include="Apps\Views\Festival\MainFestival.html" />
+    <Content Include="Apps\Views\Festival\NewFestival.html" />
+    <Content Include="Apps\Views\Gallery\MainGallery.html" />
+    <Content Include="Apps\Views\Gallery\NewGallery.html" />
+    <Content Include="Apps\Views\NavBar\NavBar.html" />
+    <Content Include="Apps\Views\Passenger\MainPassenger.html" />
+    <Content Include="Apps\Views\Passenger\NewPassenger.html" />
+    <Content Include="Apps\Views\Period\EditPeriod.html" />
+    <Content Include="Apps\Views\Period\MainPeriod.html" />
+    <Content Include="Apps\Views\Period\NewPeriod.html" />
+    <Content Include="Apps\Views\Period\SpecificFestival.html" />
+    <Content Include="Apps\Views\Quota\EditQuota.html" />
+    <Content Include="Apps\Views\Quota\MainQuota.html" />
+    <Content Include="Apps\Views\Quota\NewQuota.html" />
+    <Content Include="Apps\Views\Reservation\EditReservation.html" />
+    <Content Include="Apps\Views\Reservation\MainReservation.html" />
+    <Content Include="Apps\Views\Reservation\NewReservation.html" />
+    <Content Include="Apps\Views\Roles\MainRoles.html" />
+    <Content Include="Apps\Views\Suites\DetailsSuite.html" />
+    <Content Include="Apps\Views\Suites\EditSuite.html" />
+    <Content Include="Apps\Views\Suites\MainSuite.html" />
+    <Content Include="Apps\Views\Suites\NewSuite.html" />
+    <Content Include="Apps\Views\UserInDeptRole\EditUserInDeptRole.html" />
+    <Content Include="Apps\Views\UserInDeptRole\MainUserInDeptRole.html" />
+    <Content Include="Apps\Views\UserInDeptRole\NewUserInDeptRole.html" />
+    <Content Include="Apps\Views\UserProfile\UserProfileIndex.html" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\blueimp-gallery.min.css" />
+    <Content Include="Content\bootstrap-dialog.css" />
+    <Content Include="Content\bootstrap-dialog.min.css" />
+    <Content Include="Content\bootstrap-image-gallery.min.css" />
+    <Content Include="Content\bootstrap-rtl.css" />
+    <Content Include="Content\bootstrap-rtl.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DesktopImage\kivvi.jpg" />
+    <Content Include="Content\fullcalendar.min.css" />
+    <Content Include="Content\fullcalendar.print.css" />
+    <Content Include="Content\Icons\confirmlist.png" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\DesktopImage\1.jpg" />
+    <Content Include="Content\DesktopImage\10.jpg" />
+    <Content Include="Content\DesktopImage\2.jpg" />
+    <Content Include="Content\DesktopImage\3.jpg" />
+    <Content Include="Content\DesktopImage\4.jpg" />
+    <Content Include="Content\DesktopImage\5.jpg" />
+    <Content Include="Content\DesktopImage\6.jpg" />
+    <Content Include="Content\DesktopImage\7.jpg" />
+    <Content Include="Content\DesktopImage\8.jpg" />
+    <Content Include="Content\DesktopImage\9.jpg" />
+    <Content Include="Content\DesktopImage\thumb\1.jpg" />
+    <Content Include="Content\DesktopImage\thumb\10.jpg" />
+    <Content Include="Content\DesktopImage\thumb\2.jpg" />
+    <Content Include="Content\DesktopImage\thumb\3.jpg" />
+    <Content Include="Content\DesktopImage\thumb\4.jpg" />
+    <Content Include="Content\DesktopImage\thumb\5.jpg" />
+    <Content Include="Content\DesktopImage\thumb\6.jpg" />
+    <Content Include="Content\DesktopImage\thumb\7.jpg" />
+    <Content Include="Content\DesktopImage\thumb\8.jpg" />
+    <Content Include="Content\DesktopImage\thumb\9.jpg" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Icons\audiogroup.png" />
+    <Content Include="Content\Icons\basket.jpg" />
+    <Content Include="Content\Icons\basket.png" />
+    <Content Include="Content\Icons\boss.png" />
+    <Content Include="Content\Icons\CampFacilities.png" />
+    <Content Include="Content\Icons\Camps.png" />
+    <Content Include="Content\Icons\Departman.png" />
+    <Content Include="Content\Icons\Desktop-icon.png" />
+    <Content Include="Content\Icons\Festival.png" />
+    <Content Include="Content\Icons\Galleries.png" />
+    <Content Include="Content\Icons\Gallery.png" />
+    <Content Include="Content\Icons\Games-icon.png" />
+    <Content Include="Content\Icons\help.png" />
+    <Content Include="Content\Icons\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Icons\logo2.png" />
+    <Content Include="Content\Icons\news.png" />
+    <Content Include="Content\Icons\passanger.png" />
+    <Content Include="Content\Icons\photoGroup.png" />
+    <Content Include="Content\Icons\Reciption.png" />
+    <Content Include="Content\Icons\slice.png" />
+    <Content Include="Content\Icons\sms.png" />
+    <Content Include="Content\Icons\smsconfig.png" />
+    <Content Include="Content\Icons\suite.png" />
+    <Content Include="Content\Icons\suiteFacilities.png" />
+    <Content Include="Content\Icons\User.png" />
+    <Content Include="Content\Icons\videoGroup.png" />
+    <Content Include="Content\Icons\vote.png" />
+    <Content Include="Content\images\close-20-333.png" />
+    <Content Include="Content\images\close-20.png" />
+    <Content Include="Content\images\icon-sprite-16x16.jpg" />
+    <Content Include="Content\images\icon-sprite-20x20.jpg" />
+    <Content Include="Content\images\icon-sprite-32x32.jpg" />
+    <Content Include="Content\js-persian-cal.css" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\pcal.png" />
+    <Content Include="Content\please-wait.css" />
+    <Content Include="Content\images\resize-handle.png" />
+    <Content Include="Content\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\jquery.jspanel.css" />
+    <Content Include="Content\jquery.jspanel.min.css" />
+    <Content Include="Content\scheduler.css" />
+    <Content Include="Content\scheduler.min.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\select2.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\jsglyph.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\error.svg" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\loginBg.png" />
+    <Content Include="Images\play-pause.png" />
+    <Content Include="Images\play-pause.svg" />
+    <Content Include="Images\repeat_x.png" />
+    <Content Include="Images\video-play.png" />
+    <Content Include="Images\video-play.svg" />
+    <Content Include="packages.config" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-cookies.js" />
+    <Content Include="Scripts\angular-cookies.min.js" />
+    <Content Include="Scripts\angular-loader.js" />
+    <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-messages.js" />
+    <Content Include="Scripts\angular-messages.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-touch.js" />
+    <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap-image-gallery.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\breeze.angular.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\fa.js" />
+    <Content Include="Scripts\fullcalendar.js" />
+    <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Scripts\gmap.js" />
+    <Content Include="Scripts\gmaps.js" />
+    <Content Include="Scripts\iscroll-infinite.js" />
+    <Content Include="Scripts\iscroll.js" />
+    <Content Include="Content\bootstrap-rtl.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\Icons\Reciption.psd" />
+    <Content Include="Content\images\ui-icons_454545_256x240 - Kopie.psd" />
+    <Content Include="fonts\Droid_Arabic_Kufi.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\Droid_Arabic_Kufi.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\Droid_Arabic_Kufi.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\FontAwesome.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\jsglyph.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\jsglyph.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\jsglyph.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\jsglyph.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\WebYekan.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\WebYekan.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\WebYekan.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Scripts\angular-cookies.min.js.map" />
+    <Content Include="Scripts\angular-loader.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\angular-touch.min.js.map" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.blueimp-gallery.min.js" />
+    <Content Include="Scripts\jquery.jspanel.js" />
+    <Content Include="Scripts\jquery.jspanel.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\angular-messages.min.js.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jQueryTween.min.js" />
+    <Content Include="Scripts\js-persian-cal.min.js" />
+    <Content Include="Scripts\knockout-3.2.0.debug.js" />
+    <Content Include="Scripts\knockout-3.2.0.js" />
+    <Content Include="Scripts\mobile-detect.js" />
+    <Content Include="Scripts\mobile-detect.min.js" />
+    <Content Include="Scripts\moment-jalaali.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\please-wait.js" />
+    <Content Include="Scripts\please-wait.min.js" />
+    <Content Include="Scripts\q.js" />
+    <Content Include="Scripts\q.min.js" />
+    <Content Include="Scripts\scheduler.js" />
+    <Content Include="Scripts\scheduler.min.js" />
+    <Content Include="Scripts\select2.full.js" />
+    <Content Include="Scripts\select2.full.min.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="Scripts\tweenMax.min.js" />
+    <Content Include="Scripts\vendor\angular-file-upload-shim.js" />
+    <Content Include="Scripts\vendor\angular-file-upload.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <None Include="readme.txt" />
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Login2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Apps\Models\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Scripts\i18n\" />
+    <Folder Include="ViewModels\Rooms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Camps.CommonLib\Camps.CommonLib.csproj">
+      <Project>{0c12ddb7-b4ae-446f-a2a9-a03b06aa33e3}</Project>
+      <Name>Camps.CommonLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Camps.Contract\Camps.Contract.csproj">
+      <Project>{029f9457-3d0b-4263-b2c9-0e3ca14cf8ab}</Project>
+      <Name>Camps.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\Camps.DataLayer.csproj">
+      <Project>{04cd4a15-711d-4b2d-afbe-196a6a5953dc}</Project>
+      <Name>Camps.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainLayer\Camps.DomainLayer.csproj">
+      <Project>{1aef5868-dff3-4d12-9d51-4d328a489f4a}</Project>
+      <Name>Camps.DomainLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceLayer\Camps.ServiceLayer.csproj">
+      <Project>{55404acb-09b0-42cb-96a2-69d0b4cfc4e1}</Project>
+      <Name>Camps.ServiceLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3654</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3654/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

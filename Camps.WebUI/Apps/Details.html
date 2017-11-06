@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="campsApp">
+<head>
+    <title></title>
+    <style >
+        [ng-cloak] {
+    display: none;
+}
+    </style>
+</head>
+<body ng-cloak>
+
+    <div ng-controller="appCtrl">
+        <h3 ng-bind-html="snippet | unsafe"></h3>
+        <h3 ng-bind-html="snippet"></h3>
+        <h3 ng-bind-template="{{tt.Name}} {{tt.Family }}" ng-style="myStyle"></h3>
+        <h3 ng-bind="tt.Name"></h3>
+        <label>{{tt.Name | uppercase}}</label>
+        <label>{{tt.Family }}</label>
+        <label>{{tt.Tel }}</label> <br />
+        <div>{{tt.location.Address}}</div>
+        <div>{{tt.location.City}}</div>
+        <div>{{tt.location.No}}</div>
+        <img ng-src="{{tt.imageUrl}}"/>
+        <br/>Order By:
+        <select ng-model="sortorder">
+            <option selected value="Phone">Phone</option>
+            <option value="Vote">Vote</option>
+        </select>
+        <ul>
+            <li ng-repeat="ss in tt.sessions | orderBy:sortorder">
+                <b>{{ss.Phone}}</b>
+                <b ng-click="upVote(ss)"> ^ </b> <label> [{{ss.Vote}}] </label><b ng-click="downVote(ss)"> v </b>
+            </li>
+        </ul>
+        <button ng-disabled="switchOn">{{switchOn}}</button>
+        <button ng-disabled="switchOff">{{switchOff}}</button>
+        <div ng-non-bindable>{{ 1 + 2}}</div>
+    </div>
+
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-sanitize.js"></script>
+    <script src="/Apps/CampsApp.js"></script>
+<script src="/Apps/Controllers/appCtrl.js"></script>
+    <script src="/Apps/Services/EventData.js"></script>
+</body>
+</html>

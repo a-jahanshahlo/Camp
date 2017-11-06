@@ -1,0 +1,38 @@
+﻿<div class="container-fluid">
+    <table class="table">
+        <tbody>
+        <tr>
+            <td>نام فایل</td>
+            <td>{{seelectedFileToUpdate.name}}</td>
+        </tr>
+        <tr>
+            <td>اندازه فایل</td>
+            <td>{{seelectedFileToUpdate.size}}</td>
+        </tr>
+        <tr>
+            <td>فرمت فایل</td>
+            <td>{{seelectedFileToUpdate.extention}}</td>
+        </tr>
+            <tr>
+                <td> کد شناسایی</td>
+                <td>{{seelectedFileToUpdate.guid}}</td>
+            </tr>
+        <tr>
+            <td>توضیحات</td>
+            <td>
+                <textarea ng-model="seelectedFileToUpdate.desctiption"></textarea>
+            
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button ng-click="updateFileToDb()" type="button" class="btn btn-success btn-sm">
+                    <i class="fa fa-check-circle"></i>
+                     ویرایش
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

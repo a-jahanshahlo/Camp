@@ -1,0 +1,55 @@
+﻿<div   class="container-fluid">
+
+    <div class=" " id="scrollspecificperiodframe" style="height:420px " c-paginationperiod fetch-fn="specificFestFetchData" datasource="specificPeriodList" c-skip="skipSpecific" c-pagesize="pagesizeSpecific" c-festivalid="festivalid">
+        <div class="scroller">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox">
+                        </th>
+                        <th></th>
+                        <th> جشنواره </th>
+                        <th> دوره </th>
+                        <th> اردوگاه </th>
+                        <th> فعال/غیر فعال  </th>
+                        <th>از تاریخ </th>
+                        <th>تا تاریخ </th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr ng-repeat="period in specificPeriodList">
+                        <th scope="row">
+                            <input type="checkbox">
+                        </th>
+                        <td>
+                            <div class="btn-group " role="group" aria-label="...">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-danger" ng-click="delete(period.id)">حذف</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-xs btn-info" ng-click="openEditModal(period)">ویرایش</button>
+                                </div>
+ 
+                            </div>
+                        </td>
+
+                        <td>{{period.festivalIndexViewModel.festivalTitle }}</td>
+                        <td>{{period.periodTitle}}</td>
+                        <td>{{period.campsIndexViewModel.name}}</td>
+                        <td ng-bind-html="period.festivalIndexViewModel.isActive | setFaBoolean"></td>
+                        <td>{{period.fromDate | changeToPersian}}</td>
+                        <td >{{period.toDate | changeToPersian}}</td>
+                        
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+ 
+</div>
+

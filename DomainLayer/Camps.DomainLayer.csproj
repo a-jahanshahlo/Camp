@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1AEF5868-DFF3-4D12-9D51-4D328A489F4A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comps.DomainLayer</RootNamespace>
+    <AssemblyName>Comps.DomainLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="AppSetting.cs" />
+    <Compile Include="Base\Person.cs" />
+    <Compile Include="Bill.cs" />
+    <Compile Include="Booking.cs" />
+    <Compile Include="Camp.cs" />
+    <Compile Include="CampFacilitie.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="DelEntity.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="DepartmentDeptRole.cs" />
+    <Compile Include="DepInFestival.cs" />
+    <Compile Include="DeptRole.cs" />
+    <Compile Include="UserInDeptRole.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Enums\BaseEnum.cs" />
+    <Compile Include="Facility.cs" />
+    <Compile Include="FacilityPackage.cs" />
+    <Compile Include="FacilityUnit.cs" />
+    <Compile Include="Festival.cs" />
+    <Compile Include="Gallary.cs" />
+    <Compile Include="Gender.cs" />
+    <Compile Include="IDel.cs" />
+    <Compile Include="ItemsInFacilityPackage.cs" />
+    <Compile Include="Organization.cs" />
+    <Compile Include="Package.cs" />
+    <Compile Include="PackageGrade.cs" />
+    <Compile Include="Passenger.cs" />
+    <Compile Include="PassengerTeam.cs" />
+    <Compile Include="Period.cs" />
+    <Compile Include="PersonalSetting.cs" />
+    <Compile Include="Phone.cs" />
+    <Compile Include="File.cs" />
+    <Compile Include="Poll.cs" />
+    <Compile Include="Quotas.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="RoomType.cs" />
+    <Compile Include="Security\ApplicationUser.cs" />
+    <Compile Include="Security\CustomRole.cs" />
+    <Compile Include="Security\CustomUserClaim.cs" />
+    <Compile Include="Security\CustomUserLogin.cs" />
+    <Compile Include="Security\CustomUserRole.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="Province.cs" />
+    <Compile Include="ServiceGroup.cs" />
+    <Compile Include="ServicePackage.cs" />
+    <Compile Include="Stock.cs" />
+    <Compile Include="Suite.cs" />
+    <Compile Include="SuiteFacilitie.cs" />
+    <Compile Include="SuiteFacilityPackage.cs" />
+    <Compile Include="SuiteGrade.cs" />
+    <Compile Include="SuiteOwner.cs" />
+    <Compile Include="SuiteRate.cs" />
+    <Compile Include="SuiteType.cs" />
+    <Compile Include="UserInfo.cs" />
+    <Compile Include="UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

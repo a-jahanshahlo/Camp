@@ -1,0 +1,83 @@
+﻿@using Camps.WebUI.Areas.HelpPage
+@model Camps.WebUI.ViewModels.Accounts.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "";
+}
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/Content/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <link href="~/Content/custom.css" rel="stylesheet" />
+
+</head>
+<body class="login-body">
+    <div class="block blur2">
+
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="clear-form two-col">
+                        <div class="form-heading">
+                            <h3 class="header">ورود به سامانه اردوگاه ها</h3>
+                            <hr>
+                        </div>
+                        <div class="col1">
+                            <h4>نکات امنیتی</h4>
+                            <p>
+                                لطفا جهت ورود به سامانه از اطلاعات کاربری خود استفاده نمائید
+                            </p>
+                            <p>در هنگام ورد اطلاعات از خاموش بودن کلید CAPS-LOCK اطمینان حاصل کنید</p>
+                            <p class="center">
+                                <img src="/Content/Icons/logo.png" width="100" />
+                            </p>
+                        </div>
+                        <div class="col2">
+                            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true)
+                                <div class="form-heading">
+                                    <h4 class="header">حساب کاربری</h4>
+                                </div>
+                                <div class="form-body">
+
+
+                                    <div class="pair-group">
+                                        @Html.TextBoxFor(model => model.UserName, new { @class = "input-block-level", placeholder = "آدرس ایمیل" })
+                                        @Html.ValidationMessageFor(model => model.UserName)
+                                        @Html.PasswordFor(model => model.Password, new { @class = "input-block-level", placeholder = "کلمه عبور " })
+                                        @Html.ValidationMessageFor(model => model.Password)
+
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            @Html.CheckBoxFor(model => model.RememberMe)
+                                            @Html.Label("مرا بخاطر بسپار")
+                                            @Html.ValidationMessageFor(model => model.RememberMe)
+
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-footer">
+                                    <button class="btn btn-large btn-blue btn-block" type="submit">ورود به سیستم</button>
+                                    <p class="center">
+                                        <a href="#">کلمه عبور خود را فراموش کردم</a>
+                                    </p>
+
+                                </div>
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /container -->
+
+</body>
+</html>

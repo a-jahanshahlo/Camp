@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camps.DataLayer", "DataLayer\Camps.DataLayer.csproj", "{04CD4A15-711D-4B2D-AFBE-196A6A5953DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camps.ServiceLayer", "ServiceLayer\Camps.ServiceLayer.csproj", "{55404ACB-09B0-42CB-96A2-69D0B4CFC4E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camps.DomainLayer", "DomainLayer\Camps.DomainLayer.csproj", "{1AEF5868-DFF3-4D12-9D51-4D328A489F4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camps.WebUI", "Camps.WebUI\Camps.WebUI.csproj", "{C10CBC27-28EC-4723-9C02-1F61DE476972}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{A814FA2A-CEE0-4DF0-8FF3-065277518340}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Introduction.docx = Documents\Introduction.docx
+		Documents\ReadMe.txt = Documents\ReadMe.txt
+		..\..\..\Camps Documents\User Stories.docx = ..\..\..\Camps Documents\User Stories.docx
+	EndProjectSection
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "CampsModels", "CampsModels\CampsModels.modelproj", "{6B9F4C39-E77E-4E80-8465-5CAA34D73360}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{4E5F7379-4517-4126-978C-3912A20A31EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camps.CommonLib", "Camps.CommonLib\Camps.CommonLib.csproj", "{0C12DDB7-B4AE-446F-A2A9-A03B06AA33E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camps.Contract", "Camps.Contract\Camps.Contract.csproj", "{029F9457-3D0B-4263-B2C9-0E3CA14CF8AB}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mahyar1391.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Camps.WebUI\\Camps.WebUI.csproj
+		SccProjectName1 = Camps.WebUI
+		SccLocalPath1 = Camps.WebUI
+		SccProjectUniqueName2 = CampsModels\\CampsModels.modelproj
+		SccProjectTopLevelParentUniqueName2 = Camps.sln
+		SccProjectName2 = CampsModels
+		SccLocalPath2 = CampsModels
+		SccProjectUniqueName3 = DataLayer\\Camps.DataLayer.csproj
+		SccProjectName3 = DataLayer
+		SccLocalPath3 = DataLayer
+		SccProjectUniqueName4 = DomainLayer\\Camps.DomainLayer.csproj
+		SccProjectName4 = DomainLayer
+		SccLocalPath4 = DomainLayer
+		SccProjectUniqueName5 = ServiceLayer\\Camps.ServiceLayer.csproj
+		SccProjectName5 = ServiceLayer
+		SccLocalPath5 = ServiceLayer
+		SccProjectUniqueName6 = Camps.CommonLib\\Camps.CommonLib.csproj
+		SccProjectName6 = Camps.CommonLib
+		SccLocalPath6 = Camps.CommonLib
+		SccProjectUniqueName7 = Camps.Contract\\Camps.Contract.csproj
+		SccProjectName7 = Camps.Contract
+		SccLocalPath7 = Camps.Contract
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04CD4A15-711D-4B2D-AFBE-196A6A5953DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04CD4A15-711D-4B2D-AFBE-196A6A5953DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04CD4A15-711D-4B2D-AFBE-196A6A5953DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04CD4A15-711D-4B2D-AFBE-196A6A5953DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55404ACB-09B0-42CB-96A2-69D0B4CFC4E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55404ACB-09B0-42CB-96A2-69D0B4CFC4E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55404ACB-09B0-42CB-96A2-69D0B4CFC4E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55404ACB-09B0-42CB-96A2-69D0B4CFC4E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AEF5868-DFF3-4D12-9D51-4D328A489F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AEF5868-DFF3-4D12-9D51-4D328A489F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AEF5868-DFF3-4D12-9D51-4D328A489F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AEF5868-DFF3-4D12-9D51-4D328A489F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C10CBC27-28EC-4723-9C02-1F61DE476972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C10CBC27-28EC-4723-9C02-1F61DE476972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C10CBC27-28EC-4723-9C02-1F61DE476972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C10CBC27-28EC-4723-9C02-1F61DE476972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B9F4C39-E77E-4E80-8465-5CAA34D73360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B9F4C39-E77E-4E80-8465-5CAA34D73360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B9F4C39-E77E-4E80-8465-5CAA34D73360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B9F4C39-E77E-4E80-8465-5CAA34D73360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C12DDB7-B4AE-446F-A2A9-A03B06AA33E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C12DDB7-B4AE-446F-A2A9-A03B06AA33E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C12DDB7-B4AE-446F-A2A9-A03B06AA33E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C12DDB7-B4AE-446F-A2A9-A03B06AA33E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{029F9457-3D0B-4263-B2C9-0E3CA14CF8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{029F9457-3D0B-4263-B2C9-0E3CA14CF8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{029F9457-3D0B-4263-B2C9-0E3CA14CF8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{029F9457-3D0B-4263-B2C9-0E3CA14CF8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6B9F4C39-E77E-4E80-8465-5CAA34D73360} = {4E5F7379-4517-4126-978C-3912A20A31EF}
+	EndGlobalSection
+EndGlobal

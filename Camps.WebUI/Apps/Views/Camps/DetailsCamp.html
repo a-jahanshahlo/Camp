@@ -1,0 +1,125 @@
+﻿<div class="container " >
+
+    <ul c-tab class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#home">اطلاعات</a></li>
+        <li role="presentation"><a href="#gallery">گالری</a></li>
+        <li role="presentation"><a href="#suite">سوئیت ها</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="details-tab scrollwrapper2"  c-iscroll>
+ 
+            <div class="row">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <table class="table table-hover">
+
+                            <tbody>
+                                <tr>
+                                    <td width="200">نام اردوگاه</td>
+                                    <td>
+                                        <div class="field">
+                                            <label>{{campDetails.name}}</label>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200"> مساحت اردوگاه</td>
+                                    <td>
+                                        <div class="field">
+                                            <label>{{campDetails.areaSize}}</label>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>استان</td>
+                                    <td>
+
+                                        <label>{{campDetails.addressViewModel.city.provinceName}}</label>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>شهرستان</td>
+                                    <td>
+                                        <label>{{campDetails.addressViewModel.city.name}}</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>آدرس</td>
+                                    <td>
+
+                                        <p class="clearfix">آدرس کامل</p>
+
+                                        <label>{{campDetails.addressViewModel.fullAddress}}</label>
+
+                                        <p class="clearfix">منطقه </p>
+                                        <label>{{campDetails.addressViewModel.state}}</label>
+
+                                        <p class="clearfix">کد پستی </p>
+                                        <label>{{campDetails.addressViewModel.zip}}</label>
+
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>تلفن </td>
+                                    <td>
+                                        <div ng-repeat="phone in campDetails.phoneViewModels">
+                                            <label>{{phone.phoneNumber}}</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <!--
+                                    campDetails.campFacilitiesViewModels
+                                    campDetails.gallaryViewModels
+                                    campDetails.phoneViewModels
+                                    campDetails.suitesViewModels
+                                    -->
+                                    <td>موقعیت جغرافیایی</td>
+                                    <td>
+
+                                        <button class="fa-map-marker fa btn btn-link fa-location-arrow"> </button>
+                                        <label>{{campDetails.addressViewModel.longitude}}</label>
+                                        <label>{{campDetails.addressViewModel.latitude}}</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> گالری اردوگاه</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane " id="gallery">
+                        <div class="panel-bar">
+
+                            <a class="btn btn-link btn-sm" ng-click="campGallery()">
+                                <i class="fa fa-home"></i>
+                                خانه
+                            </a>
+                            <a class="btn btn-link btn-sm" ng-click="campGalleryDetails()">
+                                <i class="fa fa-photo"></i>
+                                گالری
+                            </a>
+                        </div>
+
+                        <div ng-view></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="suite">..fg hgh.</div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+ 
+</div>

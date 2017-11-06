@@ -1,0 +1,64 @@
+﻿<div class="container scrollwrapper2" c-iscroll>
+
+    <div class="row">
+
+        <table class="table table-hover">
+
+            <tbody>
+ 
+                <tr>
+                    <td width="100">جشنواره</td>
+                    <td>
+                        <div class="field" style="width: 300px">
+                            <remote-select2 ajax-url="'/api/Festival/GetFind?'" selectedfn="selectedFestivalfn" min-length="minLength"></remote-select2>
+                        </div>
+
+                    </td>
+                </tr>
+            <tr>
+                <td width="100">عنوان دوره</td>
+                <td>
+                    <div class="field" style="width: 300px">
+                        <select id="item" ng-model="item" ng-change="selectedPeriodfn(item)">
+                            <option value=''>انتخاب کنید...</option>
+                            <option ng-repeat="item in periodList" value="{{item.id}}">{{item.text}}</option>
+                        </select>
+                    </div>
+
+                </td>
+            </tr>
+                <tr>
+                    <td width="100"> دپارتمان</td>
+                    <td>
+                        <div class="field" style="width: 300px">
+                            <select id="item2" ng-model="item2" ng-change="selectedDeptfn(item2)">
+                                <option value=''>انتخاب کنید...</option>
+                                <option ng-repeat="item2 in deptList" value="{{item2.id}}">{{item2.text}}</option>
+                            </select>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100">مهلت پاسخگویی   </td>
+                    <td>
+                        <div class="field" style="width: 300px">
+                           
+                            <persian-cal en-date="quota.deadLineTime"></persian-cal>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button class="btn btn-success" ng-click="addNew(quota)">ثبت</button>
+                        <!--<button ng-if="isEdit == false" ng-click="editModeCamp()" class="btn btn-default">ویرایش</button>-->
+                        <!--<button ng-if="isEdit == true" class="btn btn-success">ویرایش</button>-->
+                        <button ng-click="cancelNewModal()" class="btn btn-danger">انصراف</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+﻿<div class="container scrollwrapper2" id="scrollnewsuiteframe">
+    <div class="scroller">
+        <div class="row">
+
+            <table class="table table-hover">
+
+                <tbody>
+                    <tr>
+                        <td width="200">نام سوئیت</td>
+                        <td>
+                            <div class="field">
+                                <input type="text" ng-required ng-maxlength="200" ng-model="suite.SuiteName" />
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200">شماره سوئیت</td>
+                        <td>
+                            <div class="field">
+                                <input type="text" ng-required ng-maxlength="200" ng-model="suite.SuiteNumber" />
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200"> نام اردوگاه</td>
+                        <td>
+
+                            <select id="item1" ng-model="item1" ng-change="selectedCamp(item1)">
+                                <option value=''>انتخاب کنید...</option>
+                                <option ng-repeat="item1 in allCamps" value="{{item1.id}}">{{item1.name}}</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>درجه سوئیت</td>
+                        <td>
+                            <select id="item2" ng-model="item2" ng-change="selectedGrade(item2)">
+                                <option value=''>انتخاب کنید...</option>
+                                <option ng-repeat="item2 in suiteGrades" value="{{item2.id}}">{{item2.name}}</option>
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>مالک سوئیت</td>
+                        <td>
+                            <select id="item3" ng-model="item3" ng-change="selectedOwner(item3)">
+                                <option value=''>انتخاب کنید...</option>
+                                <option ng-repeat="item3 in allSuiteOwners" value="{{item3.id}}">{{item3.name}}</option>
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>نوع سوئیت</td>
+                        <td>
+
+                            <select id="item4" ng-model="item4" ng-change="selectedSuiteType(item4)">
+                                <option value=''>انتخاب کنید...</option>
+                                <option ng-repeat="item4 in suiteTypes" value="{{item4.id}}">{{item4.name}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                <tr>
+                    <td>تعداد اطاق </td>
+                    <td>
+                        <input type="text" ng-model="suite.roomCount"/>
+                    </td>
+                </tr>
+                    <tr>
+                        <td> ظرفیت مسافر </td>
+                        <td>
+                            <input type="text" ng-model="suite.capacity" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>تلفن </td>
+                        <td>
+                            <button class="btn btn-link fa fa-plus bg-primary" ng-click="addPhone()"></button>
+                            <div ng-repeat="phone in suite.phones">
+                                <button class="btn btn-link fa fa-minus bg-danger" ng-click="minusPhone($index)"></button>
+                                <input type="text" ng-model="phone.phoneNumber" />
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> گالری تصاویر</td>
+                        <td>
+                            <select id="item6" ng-model="item6" ng-change="selectedGallery(item6)">
+                                <option value=''>انتخاب کنید...</option>
+                                <option ng-repeat="item6 in galleriesList" value="{{item6.id}}">{{item6.name}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-success" ng-click="addNewSuite(suite)">ثبت</button>
+                            <!--<button ng-if="isEdit == false" ng-click="editModeCamp()" class="btn btn-default">ویرایش</button>-->
+                            <!--<button ng-if="isEdit == true" class="btn btn-success">ویرایش</button>-->
+                            <button ng-click="cancelEditModeCamp()" class="btn btn-danger">انصراف</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

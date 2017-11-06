@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="fa" ng-app="campsApp">
+<head>
+    <title></title>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="/Content/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap-dialog.min.css" rel="stylesheet" />
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/jquery.jspanel.css" rel="stylesheet" />
+    <link href="/Content/blueimp-gallery.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap-image-gallery.min.css" rel="stylesheet" />
+    <link href="/Content/select2.min.css" rel="stylesheet" />
+    <link href="/Content/please-wait.css" rel="stylesheet" />
+    <link href="/Content/ADM-dateTimePicker.css" rel="stylesheet" />
+
+    <link href="/Content/custom.css" rel="stylesheet" />
+    <script src="/Scripts/please-wait.js"></script>
+
+</head>
+<body ng-cloak="" dir="rtl" ng-controller="desktopCtrl">
+    <!--<div id="depreload" class="table corner-preloader" style="">
+        <div class="table-cell wrapper">
+            <div class="circle">
+                <canvas class="line" width="160px" height="160px"></canvas>
+                <img src="/Content/Icons/logo.png" class="logo"/>
+            </div>
+        </div>
+    </div>-->
+    <script type="text/javascript">
+        window.loading_screen = window.pleaseWait({
+            logo: "/Content/Icons/logo.png",
+            backgroundColor: '#d3d3d3',
+            loadingHtml: "<div class='sk-double-bounce'><div class='sk-child sk-double-bounce1'></div><div class='sk-child sk-double-bounce2'></div></div><p>لطفا منتظر باشید...</p>"
+        });
+    </script>
+    <div ng-style="imageUrl"></div>
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 "></div>
+            <div class="col-lg-4 col-md-4 ">
+
+                <div ng-include="'Views/NavBar/NavBar.html'"></div>
+            </div>
+            <div class="col-lg-4 col-md-4 "></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1 col-lg-pull-12 col-md-3 col-xs-3 col-sm-1 ">
+
+            </div>
+            <div class="col-lg-6  col-md-6 col-xs-6 col-sm-10 ">
+                <div ng-include="'Views/AppsOnDesktop/AppsOnDesktop.html'"></div>
+            </div>
+
+            <div class="col-lg-5  col-md-3 col-xs-3 col-sm-1 ">
+                <div ng-controller="userProfileCtrl">
+                    <div ng-include="'Views/UserProfile/UserProfileIndex.html'"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->
+        <div class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body next"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left prev">
+                            <i class="fa fa-arrow-left"></i>
+                            قبلی
+                        </button>
+                        <button type="button" class="btn btn-primary next">
+                            بعدی
+                            <i class="fa-arrow-right fa"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <script src="/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="/Scripts/jquery-ui.min.js"></script>
+    <script src="/Scripts/mobile-detect.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/vendor/angular-file-upload-shim.js"></script>
+    <script src="/Scripts/vendor/angular-file-upload.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery.blueimp-gallery.min.js"></script>
+    <script src="/Scripts/bootstrap-image-gallery.min.js"></script>
+    <script src="/Scripts/jquery.jspanel.js"></script>
+    <script src="/Scripts/ADM-dateTimePicker.js"></script>
+    <script src="/Scripts/moment.js"></script>
+    <script src="/Scripts/moment-jalaali.js"></script>
+    <!--<script src="/Scripts/iscroll-infinite.js"></script>-->
+    <script src="/Scripts/iscroll.js"></script>
+    <!--<script type="text/javascript" src="/Scripts/gmap.js"></script>-->
+    <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="/Scripts/gmaps.js"></script>
+    <script src="/Scripts/jQueryTween.min.js"></script>
+    <script src="/Scripts/select2.full.js"></script>
+ 
+
+    <script src="/Scripts/angular-resource.js"></script>
+
+    <script src="/Scripts/angular-route.min.js"></script>
+    <script src="/Scripts/angular-sanitize.js"></script>
+
+
+    <script src="/Apps/CampsApp.js"></script>
+    <!-- Filters -->
+    <script src="/Apps/Filters/flrDecimalPoint.js"></script>
+    <!-- Directive -->
+    <script src="/Apps/Controllers/Directives/mapDir.js"></script>
+    <script src="/Apps/Controllers/Directives/iscrollDir.js"></script>
+    <script src="/Apps/Directives/publicDir.js"></script>
+    <!-- Service -->
+    <script src="/Apps/Common/scurity.js"></script>
+    <script src="/Apps/services/Global/Global.js"></script>
+    <script src="/Apps/services/users/userServices.js"></script>
+    <script src="/Apps/services/users/shareUserDataFa.js"></script>
+    <script src="/Apps/services/AppSettings/appSettingsService.js"></script>
+    <script src="/Apps/services/Camps/CampsService.js"></script>
+    <script src="/Apps/services/gallery/galleryService.js"></script>
+    <script src="/Apps/services/gallery/shareGalleryDataFa.js"></script>
+    <script src="/Apps/services/gallery/shareFilesDataFa.js"></script>
+    <script src="/Apps/services/Locations/locationServices.js"></script>
+    <script src="/Apps/services/suites/SuiteService.js"></script>
+    <script src="/Apps/services/Passenger/passengerService.js"></script>
+    <script src="/Apps/services/Department/deptService.js"></script>
+    <script src="/Apps/services/DeptRole/deptRoleService.js"></script>
+    <script src="/Apps/services/Account/accountService.js"></script>
+    <script src="/Apps/services/Public/PublicService.js"></script>
+    <script src="/Apps/services/Festival/festivalService.js"></script>
+<script src="/Apps/services/Period/periodService.js"></script>
+    <script src="/Apps/services/Quota/quotaService.js"></script>
+
+
+<!-- Controller -->
+    <script src="/Apps/Controllers/NavBar/navBarCtrl.js"></script>
+    <script src="/Apps/Controllers/desktopCtrl.js"></script>
+    <script src="/Apps/Controllers/indexCtrl.js"></script>
+
+    <script src="/Apps/Controllers/userProfileCtrl.js"></script>
+    <script src="/Apps/Controllers/AppSettings/appSettingsCtrl.js"></script>
+    <script src="/Apps/Controllers/AppSettings/backgroundImagesListCtrl.js"></script>
+    <script src="/Apps/Controllers/appsOnDesktop/appsOnDesktopCtrl.js"></script>
+    <script src="/Apps/Controllers/camps/campsCtrl.js"></script>
+    <script src="/Apps/Controllers/Gallery/galleryCtrl.js"></script>
+    <script src="/Apps/Controllers/Gallery/audiosCategoryCtrl.js"></script>
+    <script src="/Apps/Controllers/Gallery/photosCategoryCtrl.js"></script>
+    <script src="/Apps/Controllers/Gallery/videosCategoryCtrl.js"></script>
+    <script src="/Apps/Controllers/Gallery/allFileCategoryCtrl.js"></script>
+    <script src="/Apps/Controllers/Gallery/allFilesCtrl.js"></script>
+    <script src="/Apps/Controllers/Suites/suiteCtrl.js"></script>
+    <script src="/Apps/Controllers/Passengers/passengerCtrl.js"></script>
+    <script src="/Apps/Controllers/Department/deptCtrl.js"></script>
+    <script src="/Apps/Controllers/DeptRole/deptRoleCtrl.js"></script>
+    <script src="/Apps/Controllers/Account/accountCtrl.js"></script>
+    <script src="/Apps/Controllers/Festival/festivalCtrl.js"></script>
+    <script src="/Apps/Controllers/Period/periodCtrl.js"></script>
+<script src="/Apps/Controllers/Quota/quotaCtrl.js"></script>
+
+
+<script src="/Scripts/custom.js"></script>
+
+</body>
+</html>

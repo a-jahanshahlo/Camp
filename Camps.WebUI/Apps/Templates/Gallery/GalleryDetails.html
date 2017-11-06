@@ -1,0 +1,56 @@
+﻿<div class="container  " style="background-color: rgb(231, 231, 231); width: 700px;margin: 0px">
+    <div id="products" class="row list-group products">
+        <div class="item  col-xs-4 col-lg-4 mouse-hover list-group-item-block" ng-repeat="photo in gallery.photos">
+            <div class="thumbnail">
+                <a class="gallery-button  group list-group-image" href="{{'/api/files/thumbnail/'}}{{ photo.guid}}{{ '?&width=800&heigth=800'}}" title="{{photo.name}}" type="{{photo.extention}}" data-gallery="">
+                    <img ng-src="{{'/api/files/GetFilethumb/'}}{{photo.guid }}" class="thumbnail-img" alt="Alternate Text" width="200" height="150" />
+                </a>
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        {{photo.name}}
+                    </h4>
+                    <p class="group inner list-group-item-text">
+                        {{photo.desctiption}}
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="item  col-xs-4 col-lg-4 mouse-hover list-group-item-block" ng-repeat="photo in gallery.videos">
+            <div class="thumbnail">
+                <a class="gallery-button  group list-group-image" href="{{'/api/files/thumbnail/'}}{{ photo.guid}}{{ '?&width=800&heigth=800'}}" title="{{photo.name}}" type="{{photo.extention}}" data-gallery="">
+                    <img ng-src="{{'/api/files/GetFilethumb/'}}{{photo.guid }}" class="thumbnail-img" alt="Alternate Text" width="200" height="150" />
+                </a>
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        {{photo.name}}
+                    </h4>
+                    <p class="group inner list-group-item-text">
+                        {{photo.desctiption}}
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="item  col-xs-4 col-lg-4 mouse-hover list-group-item-block" ng-repeat="photo in gallery.audios">
+            <div class="thumbnail">
+                <a class="gallery-button  group list-group-image" href="{{'/api/files/thumbnail/'}}{{ photo.guid}}{{ '?&width=800&heigth=800'}}" title="{{photo.name}}" type="{{photo.extention}}" data-gallery="">
+                    <img ng-src="{{'/api/files/GetFilethumb/'}}{{photo.guid }}" class="thumbnail-img" alt="Alternate Text" width="200" height="150" />
+                </a>
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        {{photo.name}}
+                    </h4>
+                    <p class="group inner list-group-item-text">
+                        {{photo.desctiption}}
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

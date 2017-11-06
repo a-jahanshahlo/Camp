@@ -1,0 +1,89 @@
+﻿<div ng-controller="passengerCtrl">
+    <div class="row panel-bar">
+
+        <div class="col-lg-4">
+            <button ng-click="newSuite()" type="button" class="btn btn-success btn-sm">
+                <i class="fa fa-plus"></i>
+                مهمان جدید
+            </button>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-link btn-sm" ng-click="reloadData()">
+                <i class="fa fa-refresh fa-lg"></i>
+            </button>
+            <button ng-click="addNewCamps()" type="button" class="btn btn-link btn-sm">
+                <i class="fa fa-trash fa-lg"></i>
+            </button>
+        </div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="جستجو">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="fa fa-search fa-lg"></i>
+                    </button>
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" scrollwrapper3" style="height:420px " c-pagination fetch-fn="fetchData" datasource="suiteList" c-skip="skip" c-pagesize="pagesize">
+
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox">
+                    </th>
+                    <th></th>
+                    <th> اردوگاه </th>
+                    <th>نام سوئیت  </th>
+                    <th>شماره </th>
+                    <th> تعداد اطاق </th>
+                    <th> ظرفیت پذیرش   </th>
+                    <th>گالری  </th>
+                    <th>اطلاعات کامل </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="suite in suiteList">
+                    <th scope="row">
+                        <input type="checkbox">
+                    </th>
+                    <td>
+                        <div class="btn-group " role="group" aria-label="...">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-xs btn-danger" ng-click="deleteSuite(suite.id)">حذف</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-xs btn-info" ng-click="openEditSuiteModal(suite)">ویرایش</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{suite.camp.name}}</td>
+                    <td>{{suite.suiteName}}</td>
+                    <td>{{suite.suiteNumber}}</td>
+                    <td>{{suite.capacity}}</td>
+                    <td>{{suite.roomCount}}</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-link" ng-if="suite.gallery != null" ng-click="removeGallery(suite)">
+                            <i class="fa fa-trash fa-lg"></i>
+                        </button>
+                    </td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-xs btn-link" ng-click="openDetailsSuiteModal(suite)">
+                            <i class="fa fa-info-circle fa-lg"></i>
+                        </button>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

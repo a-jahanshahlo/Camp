@@ -1,0 +1,116 @@
+﻿<div ng-controller="galleryCtrl" class="container-fluid">
+    <div class="row panel-bar">
+
+        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+            <button ng-click="uploadImage()" type="button" class="btn btn-success btn-sm">
+                <i class="fa fa-upload"></i>
+                بارگذاری فایل
+            </button>
+
+            <button ng-click="newGallery()" type="button" class="btn btn-success btn-sm">
+                <i class="fa fa-folder-open"></i>
+                گالری جدید
+            </button>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+
+            <button ng-show="isVisibleHome" ng-click="addNewCamps()" type="button" class="btn btn-link btn-sm">
+                <i class="fa fa-home fa-lg"></i>
+            </button>
+            <button ng-click="addNewCamps()" type="button" class="btn btn-link btn-sm">
+                <i class="fa fa-trash fa-lg"></i>
+            </button>
+            <button type="button" class="btn btn-link btn-sm" ng-click="refreshData()">
+                <i class="fa fa-refresh fa-lg"></i>
+            </button>
+            <button ng-show="isVisibleHome" ng-click="allFiles()" type="button" class="btn btn-link btn-sm">
+                <i class="fa fa-file"></i>
+            </button>
+            <button onclick="listView('products')" class="btn btn-link btn-sm fa fa-th-list"></button>
+            <button onclick="gridView('products')" class="btn btn-link btn-sm fa fa-th"></button>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="جستجو">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="fa fa-search fa-lg"></i>
+                    </button>
+                </span>
+
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-lg-3 col-md-3 col-xs-3 col-sm-3">
+
+
+            <!--iscroll-infinite id="mainGallery" galleries="galleriesList" load-data="getGalleries()" ng-transclude>-->
+            <div class="scrollwrapper" id="mainGalleryWrapper" style="height: 422px">
+                <div class="scroller">
+                    <table class="table">
+                        <tbody>
+                            <tr ng-repeat="gallery in galleriesList" style="min-height: 100px; background-color: rgb(231, 231, 231)">
+                                <td class="text-center">
+                                    <p class="clear-fix">
+                                        <button ng-click="deleteGalleryById(gallery.id)" type="button" class="fa fa-trash btn  btn-danger btn-xs"></button>
+                                    </p>
+                                    <p class="clear-fix">
+                                        <button ng-click="renameGallery(gallery.id,gallery.name)" type="button" class="fa fa-pencil-square-o btn  btn-default btn-xs"></button>
+                                    </p>
+
+                                </td>
+                                <td class="float-right">
+                                    <a ng-click="selectCategory(gallery.id) ">
+                                        <img src="/Content/Icons/Galleries.png" width="80" height="80" />
+                                        <p class="clear-fix"><span> {{gallery.name}}</span></p>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-lg-9 col-md-9 col-xs-9 col-sm-9">
+
+            <!--<div>
+            <a href="/h1">h1</a> |
+            <a href="/h2">h2</a> |
+            <a href="/h3">h3</a> |
+            <a href="/h4">h4</a>
+        </div>-->
+
+            <div c-iscroll style=" height: 420px;   margin: 0px;">
+                <div style=" margin: 0px;" ng-view>
+
+                </div>
+                <!-- Templates
+                        <script type="text/ng-template" id="h1.html">
+                            <h2>About Page</h2>
+                            <p>{{message}}</p>
+                        </script>
+
+
+                        <script type="text/ng-template" id="h2.html">
+                            <h2>me Page</h2>
+                            <p>{{message}}</p>
+                        </script>
+                        <script type="text/ng-template" id="h3.html">
+                            <h2>you Page</h2>
+                            <p>{{message}}</p>
+                        </script>
+
+                        <script type="text/ng-template" id="h4.html">
+                            <h2>Contact Page</h2>
+                            <p>{{message}}</p>
+                        </script>
+
+            -->
+            </div>
+        </div>
+    </div>
+</div>

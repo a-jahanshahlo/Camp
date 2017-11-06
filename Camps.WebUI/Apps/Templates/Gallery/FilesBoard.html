@@ -1,0 +1,28 @@
+﻿<div class="panel-gray container-fluid " id="selectedFileboardContainer">
+    <div class="row height-200">
+        <div class="col-sm-8 col-md-8">
+            <div id="links">
+                <ul class="list-inline ">
+                    <li ng-repeat="photo in selectedFiles" class="img-thumbnail item">
+                        <a class="btn btn-danger btn-circle" ng-click="unCheck(photo.fileId,$index)">
+                            <i class="fa fa-times"></i>
+                        </a>
+                        <img ng-src="{{'/api/files/GetFilethumb/'}}{{photo.fileId }}" alt="Alternate Text" width="80" height="60"/>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-sm-4 col-md-4">
+
+            <!--<label>{{selectedGalleryId}}</label>
+            <select ng-model="selectedGalleryId" multiple class="form-control">
+                <option ng-repeat="item in galleries" value="{{item.id}}">{{item.name}}</option>
+            </select>-->
+            <!--<label>{{data.selectedId}}</label>-->
+            <select ng-model="data.selectedId" multiple class="form-control">
+                <option ng-repeat="item in galleries" value="{{item.id}}">{{item.name}}</option>
+            </select>
+        </div>
+    </div>
+</div>

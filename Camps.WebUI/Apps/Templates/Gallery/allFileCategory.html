@@ -1,0 +1,41 @@
+﻿<!--<div>
+    <a ng-click="allFilesCategory()">allfile</a> |
+    <a ng-click="videoCategory()">video</a> |
+    <a ng-click="audioCategory()">audio</a> |
+    <a ng-click="photoCategory()">photo</a>
+    <img src="/Content/Icons/audiogroup.png"/>
+    <img src="/Content/Icons/videoGroup.png"/>
+    <img src="/Content/Icons/photoGroup.png"/>
+
+</div>-->
+<div ng-controller="allFileCategoryCtrl">
+    <br/>
+    <div class="container">
+        <ul class="list-inline">
+            <li class="text-center">
+                <a ng-click="audioCategory()">
+                    <img src="/Content/Icons/audiogroup.png" alt="Alternate Text" width="124" height="124" class="img-thumbnail" />
+                    <p>
+                        <small class="badge ">صوتی {{gallery.audios.length}}</small>
+                    </p>
+                </a>
+            </li>
+            <li class="text-center">
+                <a ng-click="videoCategory()">
+                    <img src="/Content/Icons/videoGroup.png" alt="Alternate Text" width="124" height="124" class="img-thumbnail" />
+                    <p>
+                        <small class="badge ">تصویری {{gallery.videos.length}}</small>
+                    </p>
+                </a>
+            </li>
+            <li class="text-center">
+                <a ng-click="photoCategory()">
+                    <img src="/Content/Icons/photoGroup.png" alt="Alternate Text" width="124" height="124" class="img-thumbnail" />
+                    <p>
+                        <small class="badge ">عکس {{gallery.photos.length}}</small>
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

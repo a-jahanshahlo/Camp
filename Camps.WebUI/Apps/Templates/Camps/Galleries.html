@@ -1,0 +1,22 @@
+﻿<div class="container  " style="background-color: rgb(231, 231, 231);  width: 700px; margin: 0px;min-height: 400px">
+    <div class="row list-group products">
+        <div class="  col-xs-4 col-lg-4 mouse-hover list-group-item-block" ng-repeat="gallery in campDetails.gallaryViewModels">
+            <div class="thumbnail">
+                <a class="gallery-button  group list-group-image" title="{{photo.name}}" ng-click="selectCategory(gallery) ">
+                    <img src="/Content/Icons/Galleries.png" width="80" height="80" />
+
+                </a>
+                <div class="caption">
+                    <p class="group inner list-group-item-text">
+                        {{gallery.name}}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+

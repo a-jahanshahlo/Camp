@@ -1,0 +1,85 @@
+﻿<div ng-controller="confirmQuotaCtrl">
+    <div class="row panel-bar clear-fix">
+
+        <div class="col-lg-4">
+
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-link btn-sm" ng-click="reloadData()">
+                <i class="fa fa-refresh fa-lg"></i>
+            </button>
+            <button ng-click="addNewCamps()" type="button" class="btn btn-link btn-sm">
+                <i class="fa fa-trash fa-lg"></i>
+            </button>
+        </div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="جستجو">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="fa fa-search fa-lg"></i>
+                    </button>
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" scrollwrapper3" style="height:420px " c-pagination fetch-fn="fetchData" datasource="quotaList" c-skip="skip" c-pagesize="pagesize">
+
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+
+                    <th></th>
+                    <th>تاریخ ارجاع</th>
+                    <th>مهلت پاسخگویی</th>
+
+                    <th>دپارتمان</th>
+                    <th>راهبر سیستم </th>
+                    <th>اردوگاه</th>
+
+                    <th>جشنواره </th>
+                    <th> دوره</th>
+                    <th> از تاریخ</th>
+                    <th> تا تاریخ</th>
+                    <th>
+                       مهمان
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="confirmQuota in confirmQuotaList">
+
+                    <td>
+                        <div class="btn-group " role="group" aria-label="...">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-xs btn-success" ng-click="openEditModal(confirmQuota)">ثبت </button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-xs btn-danger" ng-click="openCancelReservationModal(confirmQuota.id)">انصراف سهمیه</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{confirmQuota.addDate | changeToPersian}}</td>
+                    <td>{{confirmQuota.deadLineTime | changeToPersian}}</td>
+
+                    <td>{{confirmQuota.departmentIndexViewModel.depTitle}}</td>
+                    <td>{{confirmQuota.operatorUserViewModel.firstName}} {{confirmQuota.operatorUserViewModel.lastName}}</td>
+                    <td>{{confirmQuota.periodIndexViewModel.campsIndexViewModel.name }} </td>
+                    <td>{{confirmQuota.periodIndexViewModel.festivalIndexViewModel.festivalTitle}}</td>
+                    <td>{{confirmQuota.periodIndexViewModel.periodTitle}}</td>
+                    <td>{{confirmQuota.periodIndexViewModel.fromDate | changeToPersian}}</td>
+                    <td>{{confirmQuota.periodIndexViewModel.toDate | changeToPersian}}</td>
+                    <td ng-show="confirmQuota.passengerUserId == 0" ng-bind-html="confirmQuota.passengerUserId | setIsConfirm"></td>
+                    <td ng-show="confirmQuota.passengerUserId != 0">{{confirmQuota.passengerUserViewModel.firstName}} {{confirmQuota.passengerUserViewModel.lastName}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

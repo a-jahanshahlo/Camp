@@ -1,0 +1,14 @@
+﻿<div ng-controller="photoCategoryCtrl" class="">
+    
+    <div style="padding: 10px" id="links">
+        <ul class="list-inline gallery-container800x500">
+            <li ng-repeat="photo in photoList">
+                <a class="gallery-button" href="{{'/api/files/thumbnail/'}}{{ photo.guid}}{{ '?&width=800&heigth=800'}}" title="{{photo.desctiption}}" data-gallery="">
+                    <img ng-src="{{'/api/files/thumbnail/'}}{{photo.guid }}{{'?&width=200&heigth=200'}}" alt="Alternate Text" width="120" height="80"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->

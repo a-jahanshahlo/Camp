@@ -1,0 +1,196 @@
+﻿<div class="form-group" ng-form name="accountForm">
+
+
+    <div class="container scrollwrapper2" c-iscroll>
+        <div>
+            <div class="row">
+
+                <table class="table table-hover">
+
+                    <tbody>
+                        <tr>
+                            <td width="100">نام کاربری </td>
+                            <td>
+                                <div class="field" ng-class="{ 'has-error': accountForm.userName.$touched && accountForm.userName.$invalid }">
+                                    <input
+                                           
+                                           type="text"
+                                           ng-minlength="6"
+                                           ng-maxlength="20"
+                                           required
+                                           name="userName"
+                                           ng-model="account.userName"
+                                           ng-class="{error:!accountForm.userName.$valid}"
+                                            />
+                                    <div class="help-block" ng-messages="accountForm.userName.$error" ng-if="accountForm.userName.$touched || !accountForm.userName.$pristine ">
+                                        <div ng-messages-include="/apps/Messages/EmailMessage.html"></div>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100">همراه </td>
+                            <td>
+                                <div class="field">
+                                    <input type="text" ng-required ng-maxlength="200" ng-model="account.mobile" />
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100">تلفن ثابت </td>
+                            <td>
+                                <div class="field">
+                                    <input type="text" ng-required ng-maxlength="200" ng-model="account.profile.phone" />
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100">آدرس </td>
+                            <td>
+                                <div class="field">
+                                    <input type="text"   ng-model="account.profile.address" />
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100">نام </td>
+                            <td>
+                                <div class="field" ng-class="{ 'has-error': accountForm.firstname.$touched && accountForm.firstname.$invalid }">
+                                    <input type="text"
+                                           ng-minlength="1"
+                                           ng-maxlength="50"
+                                           required
+                                           name="firstname"
+                                           ng-class="{error:!accountForm.firstname.$valid}"
+                                           ng-model="account.profile.firstname" />
+                                    <div class="help-block" ng-messages="accountForm.firstname.$error" ng-if="accountForm.firstname.$touched">
+                                        <div ng-messages-include="/apps/Messages/EmailMessage.html"></div>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100">نام خانوادگی </td>
+                            <td>
+                                <div class="field" ng-class="{ 'has-error': accountForm.lastName.$touched && accountForm.lastName.$invalid }">
+                                    <input type="text"
+                                           ng-minlength="1"
+                                           ng-maxlength="50"
+                                           required
+                                           name="lastName"
+                                           ng-class="{error:!accountForm.lastName.$valid}"
+                                           ng-model="account.profile.lastName" />
+                                    <div class="help-block" ng-messages="accountForm.lastName.$error" ng-if="accountForm.lastName.$touched">
+                                        <div ng-messages-include="/apps/Messages/EmailMessage.html"></div>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100">شماره ملی </td>
+                            <td>
+                                <div class="field" ng-class="{ 'has-error': accountForm.nid.$touched && accountForm.nid.$invalid }">
+                                    <input type="text"
+                                           ng-minlength="10"
+                                           ng-maxlength="10"
+                                           required
+                                           name="nid"
+                                           ng-class="{error:!accountForm.nid.$valid}"
+                                           ng-model="account.profile.nid" />
+                                    <div class="help-block" ng-messages="accountForm.nid.$error" ng-if="accountForm.nid.$touched">
+                                        <div ng-messages-include="/apps/Messages/EmailMessage.html"></div>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100">جنسیت </td>
+                            <td>
+                                <select id="item" ng-model="account.profile.genderId">
+                                    <option value=''>انتخاب کنید...</option>
+                                    <option ng-repeat="item in genders" value="{{item.id}}">{{item.name}}</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100">تاریخ تولد </td>
+                            <td>
+                                <div class="field" style="width: 300px">
+                                    <persian-cal en-date="account.profile.birthday"></persian-cal>
+                                </div>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="100">کلمه عبور </td>
+                            <td>
+                                <div class="field" ng-class="{ 'has-error': accountForm.password.$touched && accountForm.password.$invalid }">
+                                    <input type="password"
+                                           ng-minlength="6"
+                                           ng-maxlength="20"
+                                           required
+                                           name="password"
+                                           ng-class="{error:!accountForm.password.$valid}"
+                                           ng-model="account.password" />
+                                    <div class="help-block" ng-messages="accountForm.password.$error" ng-if="accountForm.password.$touched">
+                                        <div ng-messages-include="/apps/Messages/EmailMessage.html"></div>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100">تکرار کلمه عبور</td>
+                            <td>
+                                <div class="field" ng-class="{ 'has-error': accountForm.confirmPassword.$touched && accountForm.confirmPassword.$invalid }">
+                                    <input type="password"
+                                           ng-minlength="6"
+                                           ng-maxlength="20"
+                                           required
+                                           name="confirmPassword"
+                                           ng-class="{error:!accountForm.confirmPassword.$valid}"
+                                           ng-model="account.confirmPassword" />
+                                    <div class="help-block" ng-messages="accountForm.confirmPassword.$error" ng-if="accountForm.confirmPassword.$touched">
+                                        <div ng-messages-include="/apps/Messages/EmailMessage.html"></div>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100"> فعال/غیر فعال </td>
+                            <td>
+                                <div class="field">
+                                    <input type="checkbox"   ng-model="account.isActive" />
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-success"
+                                        ng-disabled="accountForm.userName.$dirty && accountForm.userName.$invalid "
+                                        ng-click="addNew(account)">
+                                    ثبت
+                                </button>
+                                <!--<button ng-if="isEdit == false" ng-click="editModeCamp()" class="btn btn-default">ویرایش</button>-->
+                                <!--<button ng-if="isEdit == true" class="btn btn-success">ویرایش</button>-->
+                                <button ng-click="cancelNewModal()" class="btn btn-danger">انصراف</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
